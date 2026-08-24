@@ -30,9 +30,17 @@ Total 900–2700 plus an SJT band. No negative marking.
 
 - **Strategy library** — pace targets and halfway checkpoints per subtest, every question type
   with its specific method and its recurring traps, and the ten SJT principles.
-- **154 practice questions** — 32 Verbal Reasoning across 8 passages, 30 Decision Making covering
-  all six question types, 36 Quantitative Reasoning, 56 Situational Judgement across 14 scenarios.
+- **218 written questions** — 64 Verbal Reasoning across 16 passages, 30 Decision Making covering
+  all six question types, 36 Quantitative Reasoning, 88 Situational Judgement across 22 scenarios.
   Every one has a worked explanation that teaches the method, not just the answer.
+- **Unlimited generated questions** — 18 Quantitative Reasoning and 6 Decision Making generators
+  build fresh items on demand with different numbers every time, so there is nothing to memorise.
+  Distractors are drawn from real error modes and explanations quote the actual figures.
+- **Full-length sections for all four subtests** — the true question count and the true clock:
+  VR 44Q/22min using 11 whole passages, DM 35Q/37min, QR 36Q/26min, SJT 69Q/26min.
+- **Evidence highlighting** — reveal a Verbal Reasoning answer and the sentence that settles it is
+  highlighted in the passage: green for True/False, amber for Can't Tell with a note explaining why
+  the passage does not settle it.
 - **Drill mode** — untimed, filtered by question type, explanation after every question.
 - **Timed sections** — real per-question pace, countdown that goes amber at 5 minutes and red at 1,
   flag and navigator, `Alt+N` / `Alt+P` / `Alt+F` shortcuts, and a basic calculator available only
@@ -51,9 +59,11 @@ nothing is uploaded anywhere.
 The practice questions here are **original material written in UCAT style**. They are not official
 UCAT questions and no official question bank was copied.
 
-The single most valuable resource is the official one, and it is free:
+The single most valuable resource is the official one, and it is free, with no login:
 
-- [Four full practice tests](https://www.ucat.ac.uk/prepare/practice-tests/) — save these for the last two weeks
+- [15 question banks and 4 full practice tests](https://www.ucat.ac.uk/prepare/practice-tests/) —
+  around 900 questions, every one with an **Explain Answer** rationale. Bank progress is not saved,
+  so keep a written list, and use a laptop rather than a phone. Save the 4 practice tests for the last two weeks
 - [Question tutorials](https://www.ucat.ac.uk/prepare/question-tutorials/)
 - [Question banks](https://www.ucat.ac.uk/prepare/preparation-resources/)
 - [Tour tutorial and test tools](https://www.ucat.ac.uk/prepare/test-tools/)
@@ -67,6 +77,7 @@ its scaling, so treat the number as a way of tracking movement over time, not as
 
 ```
 index.html    app shell, styles, all UI logic
+generators.js procedural question generators for QR and DM
 strategies.js format facts, strategy library, 4-week plan
 bank-vr.js    Verbal Reasoning passages and questions
 bank-dm.js    Decision Making questions

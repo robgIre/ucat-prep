@@ -1,6 +1,6 @@
 /* Network-first service worker: always tries the network so updates land immediately,
    falls back to cache when offline. Bump VERSION on any content change. */
-var VERSION = "ucat-v5";
+var VERSION = "ucat-v6";
 var ASSETS = [
   "./","./index.html","./manifest.webmanifest",
   "./bank-vr.js","./bank-dm.js","./bank-qr.js","./bank-sjt.js","./strategies.js","./generators.js","./icon.svg"

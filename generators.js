@@ -74,7 +74,7 @@ var QR_GEN = [
 
 /* 1. percentage change */
 function(){
-  var old=ri(4,60)*25, pc=pick([4,5,6,8,10,12,15,20,25,30,40]);
+  var old=ri(3,45)*100, pc=pick([4,5,6,8,10,12,15,20,25,30,40]);
   var up=Math.random()<0.6, nw=Math.round(old*(up?1+pc/100:1-pc/100));
   var actual=(nw-old)/old*100;
   var o=numOpts(Math.abs(r1(actual)),
@@ -181,7 +181,7 @@ function(){
 
 /* 8. weighted mean */
 function(){
-  var w1=pick([20,25,30,40,60]), w2=100-w1;
+  var w1=pick([20,30,40,50,60,70,80]), w2=100-w1;
   var s1=ri(38,94), s2=ri(38,96);
   var correct=(w1*s1+w2*s2)/100;
   var o=numOpts(r1(correct), [ r1((s1+s2)/2), r1((w2*s1+w1*s2)/100), r1(correct+ri(2,5)), r1(correct-ri(2,5)) ],
@@ -300,7 +300,7 @@ function(){
 
 /* 16. percentage of a percentage */
 function(){
-  var p1=ri(4,18)*5, p2=ri(3,19)*5;
+  var p1=ri(2,9)*10, p2=ri(3,19)*5;
   var correct=p1*p2/100;
   var o=numOpts(r1(correct), [ r1(p1+p2-100), r1(Math.abs(p1-p2)), r1(correct*1.4), r1(correct*0.7) ],
     function(v){ return r1(v)+"%"; });

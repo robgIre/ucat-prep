@@ -545,7 +545,7 @@ function vTimed(v){
   var c=el("div","card");
   c.innerHTML='<h2>Timed sections</h2>'+
     '<p class="tiny muted">Exam conditions: a countdown, flag and navigator, no feedback until the end. '+
-    'The clock is set at the real per-question rate for each subtest, so the pressure matches the exam even though these sections are shorter than the live ones.</p>'+
+    'Use the full-length sections below for stamina; the shorter sets underneath are for a quick blast at the same per-question pace.</p>'+
     '<p class="tiny muted">Keyboard: <kbd>Alt</kbd>+<kbd>N</kbd> next &middot; <kbd>Alt</kbd>+<kbd>P</kbd> previous &middot; <kbd>Alt</kbd>+<kbd>F</kbd> flag. Use them &mdash; they are the real shortcuts.</p>';
   v.appendChild(c);
 
@@ -564,14 +564,13 @@ function vTimed(v){
   v.appendChild(g);
 
   var gf=el("div","card");
-  gf.innerHTML='<h3>Full-length generated sections <span class="pill">exact exam length</span></h3>'+
-    '<p class="tiny muted">These are the real thing for length as well as pace: 36 questions in 26 minutes for Quantitative Reasoning, 35 in 37 minutes for Decision Making, freshly generated each time. '+
-    'Use them to build stamina, not just speed.</p>';
+  gf.innerHTML='<h3>Full-length sections <span class="pill">exact exam length</span></h3>'+
+    '<p class="tiny muted">The real question count and the real clock for every subtest. Verbal Reasoning uses 11 complete passages and Situational Judgement whole scenarios, exactly as the live test does; '+
+    'Quantitative Reasoning and Decision Making are generated fresh each time. Use these to build stamina, not just speed.</p>';
   var gfr=el("div","row");
-  [["qr",36],["dm",35]].forEach(function(x){
-    var sc=FORMAT.sections.filter(function(s){return s.key===x[0];})[0];
-    var b=el("button","btn sm",SEC[x[0]]+" &middot; "+x[1]+"Q in "+sc.mins+" min");
-    b.onclick=function(){ startRun(x[0],"timed",GEN.batch(x[0],x[1])); };
+  FORMAT.sections.forEach(function(sc){
+    var b=el("button","btn sm",SEC[sc.key]+" &middot; "+sc.q+"Q in "+sc.mins+" min");
+    b.onclick=function(){ startRun(sc.key,"timed",fullSection(sc.key)); };
     gfr.appendChild(b);
   });
   gf.appendChild(gfr);
@@ -725,6 +724,20 @@ function vStats(v){
 
 /* ============================ runner ============================ */
 var R=null;
+/* Build a section at the exact length of the live test.
+   VR keeps whole passages together (11 passages x 4 = 44); SJT keeps whole scenarios. */
+function fullSection(sec){
+  if(sec==="qr") return GEN.batch("qr",36);
+  if(sec==="dm") return GEN.batch("dm",35);
+  var key = sec==="vr" ? "p" : "s";
+  var want = sec==="vr" ? 44 : 69;
+  var by={};
+  BANK[sec].forEach(function(q){ (by[q[key]]=by[q[key]]||[]).push(q); });
+  var groups=shuffle(Object.keys(by)), out=[];
+  for(var i=0;i<groups.length && out.length<want;i++) out=out.concat(by[groups[i]]);
+  return out.slice(0,want);
+}
+
 function startRun(sec,mode,subset){
   var qs=shuffle(subset||BANK[sec]);
   R={ sec:sec, mode:mode, qs:qs, i:0, ans:{}, flags:{}, t0:Date.now(),

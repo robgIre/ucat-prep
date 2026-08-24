@@ -65,6 +65,70 @@ One explanation is reverse causation. Illness reduces time spent outdoors and in
 The accounting does not balance. Estimates of plastic entering the ocean each year run to several million tonnes, yet surveys of surface water recover only a small fraction of the expected mass. The discrepancy, sometimes called the missing plastic problem, has several candidate explanations. Fragmentation reduces items to particles below the mesh size of standard sampling nets. Biofouling by algae and other organisms increases density until the particle sinks. Ingestion by marine organisms transports plastic downward. Sediment cores taken from the deep sea floor show rising plastic concentrations that broadly track production, which supports the view that the deep ocean is the principal sink.
 
 Policy responses have focused on consumption, and bans on particular single-use items have reduced their occurrence in coastal surveys. Whether such measures materially reduce total mass entering the ocean is doubtful, since a large share originates from a small number of river catchments and from fishing gear, neither of which is addressed by consumer bans in high-income countries.`
+  },
+  p9: {
+    title: "Mitochondria",
+    text: `The mitochondria present in almost all eukaryotic cells were once free-living bacteria. The evidence is now considered decisive: mitochondria carry their own circular genome, distinct from that of the nucleus, they divide independently of the cell cycle, and their ribosomes resemble bacterial ribosomes more closely than those of the cell they inhabit. Antibiotics that act on bacterial ribosomes can interfere with mitochondrial protein synthesis, which accounts for some drug side effects that appear unconnected to infection.
+
+The engulfment is thought to have happened once, in a single ancestral lineage, rather than repeatedly. Over the two billion years since, the great majority of the original bacterial genes were either lost or relocated to the host nucleus. Human mitochondria retain only thirty-seven genes, a small fraction of what any free-living bacterium requires.
+
+Why any genes remain in the mitochondrion at all is disputed. One proposal is that the proteins they encode are so hydrophobic that importing them across the mitochondrial membrane would be impractical. Another holds that local genetic control permits rapid adjustment of energy output to local conditions in a way that centralised control from the nucleus could not. The two accounts are not incompatible, and the balance between them is unresolved.`
+  },
+  p10: {
+    title: "Shift work and the body clock",
+    text: `Human physiology is organised around a roughly twenty-four hour cycle governed by a small cluster of cells in the hypothalamus. This master clock is entrained principally by light reaching the retina, and it in turn coordinates peripheral clocks in the liver, gut and other tissues. Core body temperature, cortisol secretion and alertness all follow predictable daily curves.
+
+Night shift work places these systems in conflict. The worker is awake and eating when the internal clock is signalling rest, and the peripheral clocks, which respond partly to meal timing, drift out of alignment with the master clock. Epidemiological studies report associations between long-term shift work and cardiovascular disease, metabolic syndrome and certain cancers. In 2007 an international body classified shift work involving circadian disruption as a probable human carcinogen, a classification that was reviewed and retained in later assessments.
+
+Interpreting these findings is not straightforward. Shift workers differ from day workers in income, diet, smoking rates and access to healthcare, and studies vary widely in how they define shift work. Interventions have been tried, including timed light exposure and restricting eating to daytime hours, and small trials suggest they can shift the clock measurably. Whether they reduce disease over a working lifetime has not been established.`
+  },
+  p11: {
+    title: "Concrete",
+    text: `Concrete is the most widely used manufactured material on earth, and its production accounts for a substantial share of global carbon dioxide emissions. The figure usually quoted lies between seven and eight per cent. Most of this arises not from the energy used to heat the kiln but from the chemistry of the process itself: converting limestone to lime releases carbon dioxide that was locked in the rock, and no improvement in fuel efficiency can avoid it.
+
+Several routes to reduction are under investigation. Substituting a portion of the cement with fly ash or ground blast furnace slag is established practice and cuts emissions per tonne, but both materials are by-products of coal power and steel making, industries that are themselves contracting. Novel binders based on magnesium or on alkali activation avoid the limestone chemistry altogether, though none has yet been produced at anything approaching the scale required.
+
+There is also a partial offset that is frequently overlooked. Cured concrete slowly reabsorbs carbon dioxide from the air, a process known as carbonation. Estimates suggest this recovers a meaningful fraction of the process emissions over the life of a structure, though the proportion depends heavily on surface area, exposure and eventual demolition method, and published figures vary considerably.`
+  },
+  p12: {
+    title: "Bird navigation",
+    text: `Migratory birds cross thousands of kilometres and arrive at destinations they may never have visited. How they do so has been studied for over a century and is still not fully explained. Several mechanisms are known to operate together rather than in isolation.
+
+The best established is a sun compass, corrected for the time of day by the bird's internal clock. Birds held under artificially shifted light cycles orient in a predictably wrong direction, which is strong evidence that the clock and the compass are coupled. A star compass has also been demonstrated: hand-reared birds shown a rotating artificial sky learn to orient relative to its axis of rotation rather than to any particular constellation.
+
+Magnetic sensing is more contested. Birds clearly respond to magnetic fields, but the receptor has not been identified with certainty. One hypothesis places it in the eye, in a light-sensitive protein whose chemistry is altered by magnetic fields; another proposes magnetite particles in the upper beak. Evidence exists for both, and they are not mutually exclusive. What is reasonably clear is that experienced adults can correct for displacement in a way that first-year birds cannot, which implies a learned map rather than an inherited compass heading alone.`
+  },
+  p13: {
+    title: "The Antikythera mechanism",
+    text: `Recovered from a Roman-era shipwreck in 1901, the Antikythera mechanism was for decades an object of speculation rather than analysis. Corroded into a few lumps of bronze, it yielded little to visual inspection. X-ray tomography carried out from the 1970s onwards, and at much higher resolution after 2005, revealed at least thirty interlocking gears and inscriptions running to thousands of characters.
+
+The device modelled astronomical cycles. It tracked the positions of the sun and moon, reproduced the irregular apparent motion of the moon using a pin-and-slot arrangement that mimics an elliptical orbit, and predicted eclipses using a cycle known to Babylonian astronomers. Dials on the back recorded a four-year cycle of games. Whether it also displayed the five planets known in antiquity is likely on the basis of the inscriptions but has not been demonstrated from surviving gearing.
+
+The mechanism's significance lies partly in what it implies about lost technology. Nothing of comparable complexity survives from the following thousand years. Whether that reflects a genuine collapse in capability or simply the poor survival of bronze objects, which were routinely melted down, is a question on which the evidence is thin and specialists disagree.`
+  },
+  p14: {
+    title: "Statins",
+    text: `Statins reduce the concentration of low-density lipoprotein cholesterol in the blood by inhibiting an enzyme in its synthesis pathway. That they lower LDL is not in dispute, and large randomised trials show that in people who have already had a heart attack or stroke, statin treatment reduces the likelihood of a further event. The evidence in this group is regarded as among the strongest in clinical medicine.
+
+Controversy attaches to their use in primary prevention, that is, in people with no established cardiovascular disease. Here the absolute benefit is smaller because the baseline risk is lower, and it must be weighed against the inconvenience and cost of lifelong medication. Muscle pain is the side effect most commonly reported by patients. Blinded trials, in which neither patient nor doctor knows who is receiving the drug, find rates of muscle symptoms close to those in the placebo group, a discrepancy usually attributed to the nocebo effect and to expectations shaped by media coverage.
+
+Critics respond that trial populations are healthier than the general population and that follow-up is too short to capture rare harms. Defenders point to the consistency of benefit across dozens of trials and hundreds of thousands of participants. The disagreement is less about whether statins work than about where the threshold for treating an otherwise healthy person should be drawn.`
+  },
+  p15: {
+    title: "Language endangerment",
+    text: `Of the roughly seven thousand languages spoken today, linguists estimate that between a third and a half are unlikely to survive the century. The distribution is very uneven: a small number of languages account for most speakers, while the median language has fewer than ten thousand.
+
+Languages are rarely lost because speakers are forbidden to use them, though that has happened. The more common pattern is a shift over three generations. Grandparents speak the local language, parents are bilingual, and children acquire only the dominant language, usually because it carries economic and educational advantage. The process is driven by rational individual choices whose collective consequence nobody intended.
+
+Revitalisation has succeeded in some cases and failed in many others. Hebrew is the example most often cited, though its circumstances were unusual, involving a state, an ideology and a population with no shared alternative. Welsh and Maori have seen measurable increases in the number of young speakers following sustained investment in education and broadcasting. What distinguishes the successes appears to be transmission within the home rather than instruction in school alone, a finding that is uncomfortable for policy because homes are much harder to influence than curricula.`
+  },
+  p16: {
+    title: "Urban heat",
+    text: `Cities are consistently warmer than the countryside around them, an effect that can reach several degrees on a still, clear night. The causes are well understood. Dark surfaces such as asphalt absorb more solar radiation than vegetation; the geometry of streets traps radiation that would otherwise escape to the sky; buildings and vehicles release waste heat directly; and the removal of vegetation eliminates the cooling that evaporation from leaves would provide.
+
+The effect is strongest at night rather than during the day, because the difference lies chiefly in the rate at which stored heat is released. This matters for health. Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality during heatwaves correlates more closely with night-time minimums than with daytime maximums.
+
+Mitigation measures are well rehearsed: reflective roofing, street trees, and permeable surfaces that allow evaporation. Their effectiveness varies with climate. Reflective roofs perform best in hot dry conditions and can be counterproductive in cities with cold winters, where the same property increases heating demand. Street trees cool reliably but require water, which is scarce in precisely the places where cooling is most needed. No single measure is adequate on its own.`
   }
 };
 
@@ -219,5 +283,173 @@ window.BANK_VR = [
     stem:"Which evidence does the passage cite in support of the deep ocean being the main destination of missing plastic?",
     opts:["Surface net surveys using a finer mesh","Rising plastic concentrations in deep sea sediment cores that track production","Direct observation of sinking particles by submersible","Measurements of plastic in the stomachs of marine organisms"],
     ev:["Sediment cores taken from the deep sea floor show rising plastic concentrations that broadly track production, which supports the view that the deep ocean is the principal sink."],
-    why:"B. 'Sediment cores taken from the deep sea floor show rising plastic concentrations that broadly track production, which supports the view that the deep ocean is the principal sink.' Ingestion is mentioned as a transport route, not as the supporting evidence.", ans:1 }
+    why:"B. 'Sediment cores taken from the deep sea floor show rising plastic concentrations that broadly track production, which supports the view that the deep ocean is the principal sink.' Ingestion is mentioned as a transport route, not as the supporting evidence.", ans:1 },
+
+  { id:"vr9a", p:"p9", kind:"tfct",
+    stem:"Mitochondria carry a genome that is separate from the one in the cell nucleus.",
+    ev:["mitochondria carry their own circular genome, distinct from that of the nucleus"],
+    why:"True. Directly stated in the first paragraph as part of the evidence for the bacterial origin.", ans:0 },
+
+  { id:"vr9b", p:"p9", kind:"tfct",
+    stem:"The engulfment that produced mitochondria happened on many separate occasions.",
+    ev:["The engulfment is thought to have happened once, in a single ancestral lineage, rather than repeatedly."],
+    why:"False. The passage says the opposite: it is thought to have happened once, in a single ancestral lineage.", ans:1 },
+
+  { id:"vr9c", p:"p9", kind:"tfct",
+    stem:"Human mitochondria contain fewer genes than the mitochondria of other animals.",
+    ev:["Human mitochondria retain only thirty-seven genes, a small fraction of what any free-living bacterium requires."],
+    why:"Can't Tell. The passage gives the human figure of thirty-seven and compares it to a free-living bacterium, never to another animal. No cross-species comparison is made.", ans:2 },
+
+  { id:"vr9d", p:"p9", kind:"mcq",
+    stem:"Why, according to the passage, can some antibiotics cause side effects that seem unrelated to infection?",
+    opts:["Mitochondrial ribosomes resemble bacterial ribosomes, so drugs targeting bacteria also disrupt them","Mitochondria divide independently of the cell cycle","Most mitochondrial genes were transferred to the nucleus","Mitochondrial proteins are unusually hydrophobic"],
+    ev:["Antibiotics that act on bacterial ribosomes can interfere with mitochondrial protein synthesis, which accounts for some drug side effects that appear unconnected to infection."],
+    why:"A. The passage links the two directly: mitochondrial ribosomes resemble bacterial ones, so a drug aimed at bacterial ribosomes can disrupt the patient's own mitochondria. B, C and D are all mentioned in the passage but none is offered as the explanation for side effects.", ans:0 },
+
+  { id:"vr10a", p:"p10", kind:"tfct",
+    stem:"Peripheral clocks in tissues such as the liver respond partly to when a person eats.",
+    ev:["the peripheral clocks, which respond partly to meal timing, drift out of alignment with the master clock"],
+    why:"True. Stated directly when explaining why night work pulls the peripheral clocks out of alignment.", ans:0 },
+
+  { id:"vr10b", p:"p10", kind:"tfct",
+    stem:"Shift work has been classified as a definite human carcinogen.",
+    ev:["an international body classified shift work involving circadian disruption as a probable human carcinogen"],
+    why:"False. The passage says 'probable', not definite. Watch the strength of the wording in classification claims.", ans:1 },
+
+  { id:"vr10c", p:"p10", kind:"tfct",
+    stem:"Timed light exposure reduces the rate of cardiovascular disease among shift workers.",
+    ev:["Whether they reduce disease over a working lifetime has not been established."],
+    why:"Can't Tell. Small trials show these interventions can shift the clock, but the passage explicitly says whether they reduce disease over a working lifetime has not been established.", ans:2 },
+
+  { id:"vr10d", p:"p10", kind:"mcq",
+    stem:"Which of the following most weakens the claim that shift work itself causes cardiovascular disease?",
+    opts:["The master clock is entrained by light reaching the retina","Shift workers differ from day workers in income, diet and smoking rates","The carcinogen classification was retained in later assessments","Peripheral clocks respond to meal timing as well as to light"],
+    ev:["Shift workers differ from day workers in income, diet, smoking rates and access to healthcare, and studies vary widely in how they define shift work."],
+    why:"B. The passage names income, diet, smoking and healthcare access as ways shift workers differ from day workers, which is the definition of confounding. A and C are true of the passage but do not bear on causation, and D describes the mechanism rather than challenging it.", ans:1 },
+
+  { id:"vr11a", p:"p11", kind:"tfct",
+    stem:"Most of the carbon dioxide from cement production comes from the chemical reaction rather than from fuel.",
+    ev:["Most of this arises not from the energy used to heat the kiln but from the chemistry of the process itself"],
+    why:"True. The passage says most arises 'not from the energy used to heat the kiln but from the chemistry of the process itself'.", ans:0 },
+
+  { id:"vr11b", p:"p11", kind:"tfct",
+    stem:"Improving kiln fuel efficiency would eliminate the emissions from cement production.",
+    ev:["no improvement in fuel efficiency can avoid it"],
+    why:"False. The passage states that no improvement in fuel efficiency can avoid the carbon dioxide released by converting limestone to lime.", ans:1 },
+
+  { id:"vr11c", p:"p11", kind:"tfct",
+    stem:"Carbonation reabsorbs more than half of the carbon dioxide released during cement production.",
+    ev:["Estimates suggest this recovers a meaningful fraction of the process emissions over the life of a structure, though the proportion depends heavily on surface area, exposure and eventual demolition method, and published figures vary considerably."],
+    why:"Can't Tell. The passage says a 'meaningful fraction' is recovered and that published figures vary considerably. No specific proportion is given, so 'more than half' is unsupported either way.", ans:2 },
+
+  { id:"vr11d", p:"p11", kind:"mcq",
+    stem:"What problem does the passage identify with using fly ash and blast furnace slag as cement substitutes?",
+    opts:["The technique is unproven and has not been used commercially","They increase the total emissions per tonne of concrete","They are by-products of industries that are themselves shrinking","They prevent the concrete from reabsorbing carbon dioxide later"],
+    ev:["both materials are by-products of coal power and steel making, industries that are themselves contracting"],
+    why:"C. The passage notes both are by-products of coal power and steel making, 'industries that are themselves contracting', so the supply is tied to declining sources. A is wrong because the practice is described as established. B and D are never claimed.", ans:2 },
+
+  { id:"vr12a", p:"p12", kind:"tfct",
+    stem:"Birds kept under artificially shifted light cycles orient in the wrong direction.",
+    ev:["Birds held under artificially shifted light cycles orient in a predictably wrong direction"],
+    why:"True. This is given as evidence that the internal clock and the sun compass are coupled.", ans:0 },
+
+  { id:"vr12b", p:"p12", kind:"tfct",
+    stem:"Birds using a star compass orient themselves by particular constellations.",
+    ev:["learn to orient relative to its axis of rotation rather than to any particular constellation"],
+    why:"False. Hand-reared birds learn to orient to the axis of rotation of the sky, 'rather than to any particular constellation'.", ans:1 },
+
+  { id:"vr12c", p:"p12", kind:"tfct",
+    stem:"The magnetic receptor in birds is located in the eye.",
+    ev:["the receptor has not been identified with certainty"],
+    why:"Can't Tell. The passage offers this as one hypothesis alongside magnetite in the beak, says evidence exists for both, and states the receptor has not been identified with certainty.", ans:2 },
+
+  { id:"vr12d", p:"p12", kind:"mcq",
+    stem:"What does the difference between adult and first-year birds suggest, according to the passage?",
+    opts:["That the sun compass develops before the star compass","That magnetic sensing is inherited rather than learned","That first-year birds rely more heavily on the star compass","That navigation involves a learned map, not only an inherited compass heading"],
+    ev:["experienced adults can correct for displacement in a way that first-year birds cannot, which implies a learned map rather than an inherited compass heading alone"],
+    why:"D. Experienced adults can correct for displacement while first-year birds cannot, which the passage says implies a learned map rather than an inherited heading alone. The other options describe mechanisms the passage discusses but does not connect to this particular difference.", ans:3 },
+
+  { id:"vr13a", p:"p13", kind:"tfct",
+    stem:"The mechanism's inscriptions were revealed by imaging rather than by visual inspection.",
+    ev:["X-ray tomography carried out from the 1970s onwards, and at much higher resolution after 2005, revealed at least thirty interlocking gears and inscriptions running to thousands of characters"],
+    why:"True. The object was corroded and 'yielded little to visual inspection'; the gears and inscriptions were revealed by X-ray tomography.", ans:0 },
+
+  { id:"vr13b", p:"p13", kind:"tfct",
+    stem:"Surviving gearing proves that the mechanism displayed the five planets known in antiquity.",
+    ev:["Whether it also displayed the five planets known in antiquity is likely on the basis of the inscriptions but has not been demonstrated from surviving gearing."],
+    why:"False. The passage says this is likely on the basis of the inscriptions but 'has not been demonstrated from surviving gearing'.", ans:1 },
+
+  { id:"vr13c", p:"p13", kind:"tfct",
+    stem:"Technological capability in the Mediterranean declined after the mechanism was built.",
+    ev:["Whether that reflects a genuine collapse in capability or simply the poor survival of bronze objects, which were routinely melted down, is a question on which the evidence is thin and specialists disagree."],
+    why:"Can't Tell. The passage raises exactly this question and says the evidence is thin and specialists disagree, offering poor survival of bronze as the alternative explanation.", ans:2 },
+
+  { id:"vr13d", p:"p13", kind:"mcq",
+    stem:"How did the mechanism reproduce the irregular apparent motion of the moon?",
+    opts:["A pin-and-slot arrangement imitating an elliptical orbit","A cycle borrowed from Babylonian astronomers","A four-year dial on the back of the device","A series of at least thirty interlocking gears"],
+    ev:["reproduced the irregular apparent motion of the moon using a pin-and-slot arrangement that mimics an elliptical orbit"],
+    why:"A. Stated directly: a pin-and-slot arrangement mimicking an elliptical orbit. B describes eclipse prediction, C the games dial, and D the imaging technique - all in the passage, none the answer to this question.", ans:0 },
+
+  { id:"vr14a", p:"p14", kind:"tfct",
+    stem:"In people who have already had a heart attack, statins reduce the chance of another cardiovascular event.",
+    ev:["in people who have already had a heart attack or stroke, statin treatment reduces the likelihood of a further event"],
+    why:"True. The passage calls the evidence in this group among the strongest in clinical medicine.", ans:0 },
+
+  { id:"vr14b", p:"p14", kind:"tfct",
+    stem:"Blinded trials find much higher rates of muscle pain in patients taking statins than in those taking placebo.",
+    ev:["Blinded trials, in which neither patient nor doctor knows who is receiving the drug, find rates of muscle symptoms close to those in the placebo group"],
+    why:"False. Blinded trials find rates 'close to those in the placebo group'. Note the passage does not deny that patients report muscle pain, only that blinded trials separate the two groups.", ans:1 },
+
+  { id:"vr14c", p:"p14", kind:"tfct",
+    stem:"Statins should not be prescribed to people without established cardiovascular disease.",
+    ev:["The disagreement is less about whether statins work than about where the threshold for treating an otherwise healthy person should be drawn."],
+    why:"Can't Tell. The passage sets out the disagreement about where the treatment threshold should lie and takes no position on it. A recommendation is not something a balanced passage establishes.", ans:2 },
+
+  { id:"vr14d", p:"p14", kind:"mcq",
+    stem:"Why is the absolute benefit of statins smaller in primary prevention?",
+    opts:["Statins lower LDL cholesterol less effectively in healthy people","The people treated are at lower risk to begin with","Trial follow-up is too short to detect the benefit","Muscle pain causes many patients to stop taking them"],
+    ev:["Here the absolute benefit is smaller because the baseline risk is lower"],
+    why:"B. The passage states the absolute benefit is smaller 'because the baseline risk is lower'. A misstates the trial evidence, C is a criticism made of the trials rather than a reason about absolute benefit, and D is never claimed.", ans:1 },
+
+  { id:"vr15a", p:"p15", kind:"tfct",
+    stem:"Most languages are spoken by relatively few people.",
+    ev:["a small number of languages account for most speakers, while the median language has fewer than ten thousand"],
+    why:"True. The passage says a small number of languages account for most speakers and that the median language has fewer than ten thousand.", ans:0 },
+
+  { id:"vr15b", p:"p15", kind:"tfct",
+    stem:"Languages are usually lost because speakers are prohibited from using them.",
+    ev:["Languages are rarely lost because speakers are forbidden to use them, though that has happened."],
+    why:"False. The passage says this is rare, though it has happened, and that the more common pattern is a three-generation shift.", ans:1 },
+
+  { id:"vr15c", p:"p15", kind:"tfct",
+    stem:"Welsh now has more speakers than it did a century ago.",
+    ev:["Welsh and Maori have seen measurable increases in the number of young speakers following sustained investment in education and broadcasting."],
+    why:"Can't Tell. The passage reports measurable increases in the number of young speakers following investment, which says nothing about the total compared with a century ago.", ans:2 },
+
+  { id:"vr15d", p:"p15", kind:"mcq",
+    stem:"Why does the passage describe its finding about successful revitalisation as uncomfortable for policy?",
+    opts:["Because revitalisation has failed in most of the cases attempted","Because the Hebrew example involved circumstances that cannot be repeated","Because what matters most is use in the home, which policy cannot easily reach","Because school instruction has been shown to make no difference at all"],
+    ev:["What distinguishes the successes appears to be transmission within the home rather than instruction in school alone, a finding that is uncomfortable for policy because homes are much harder to influence than curricula."],
+    why:"C. What distinguishes successes is transmission in the home, and the passage says homes are much harder for policy to influence than curricula. A and B are not stated as the reason, and D reverses the finding.", ans:2 },
+
+  { id:"vr16a", p:"p16", kind:"tfct",
+    stem:"The urban heat island effect is more pronounced at night than during the day.",
+    ev:["The effect is strongest at night rather than during the day, because the difference lies chiefly in the rate at which stored heat is released."],
+    why:"True. Stated directly, and the passage explains why: the difference lies in the rate at which stored heat is released.", ans:0 },
+
+  { id:"vr16b", p:"p16", kind:"tfct",
+    stem:"Reflective roofing is beneficial in every climate.",
+    ev:["Reflective roofs perform best in hot dry conditions and can be counterproductive in cities with cold winters, where the same property increases heating demand."],
+    why:"False. The passage says it can be counterproductive in cities with cold winters, where the same property increases heating demand.", ans:1 },
+
+  { id:"vr16c", p:"p16", kind:"tfct",
+    stem:"Planting street trees is the most effective single way to cool a city.",
+    ev:["Street trees cool reliably but require water, which is scarce in precisely the places where cooling is most needed."],
+    why:"Can't Tell. Street trees are said to cool reliably but to need water that is scarce where cooling matters most, and the passage concludes no single measure is adequate alone. It never ranks the measures.", ans:2 },
+
+  { id:"vr16d", p:"p16", kind:"mcq",
+    stem:"Why does the passage say night-time temperature matters particularly for health?",
+    opts:["Because dark surfaces absorb more solar radiation than vegetation","Because street geometry traps radiation that would otherwise escape","Because buildings and vehicles release waste heat directly","Because it prevents the body recovering from daytime heat stress"],
+    ev:["Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality during heatwaves correlates more closely with night-time minimums than with daytime maximums."],
+    why:"D. Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality tracks night-time minimums more closely than daytime maximums. A, B and C appear in the passage but none is given as the health reason.", ans:3 }
 ];

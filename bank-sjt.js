@@ -23,7 +23,15 @@ window.SJT_SCENARIOS = {
   s11:{ text:"Emer is a medical student on a GP placement. The surgery is running forty minutes behind. A patient who has been waiting over an hour becomes visibly frustrated and asks Emer how much longer it will be." },
   s12:{ text:"Ruairi's supervising consultant asks him to present a patient's case at a teaching session tomorrow morning. He has a university assessment the same afternoon and doubts he can prepare properly for both.", ask:"How important are the following considerations for Ruairi in deciding how to respond?" },
   s13:{ text:"During a busy clinic, Fionn notices that the consultant has moved from examining one patient to examining the next without cleaning their hands." },
-  s14:{ text:"A patient Sorcha has been following during her placement is transferred to another ward. She would like to keep visiting him so she can follow the case through to discharge.", ask:"How important are the following considerations for Sorcha?" }
+  s14:{ text:"A patient Sorcha has been following during her placement is transferred to another ward. She would like to keep visiting him so she can follow the case through to discharge.", ask:"How important are the following considerations for Sorcha?" },
+  s15:{ text:"A patient's adult son stops Maeve, a medical student, in the corridor and asks how his mother's tests came back. The patient has not said whether she wants her family informed." },
+  s16:{ text:"Oisin notices that the allergy box on a patient's drug chart has been left blank. The patient is due to be given intravenous antibiotics within the hour." },
+  s17:{ text:"A student on the same placement posts a photograph on social media taken in a staff area. No patient is visible, but the ward and hospital are clearly identifiable and the caption complains about a difficult shift." },
+  s18:{ text:"Leah runs a weekly peer teaching session. Reviewing her notes, she realises she gave the group a piece of incorrect clinical information last week and that nobody questioned it." },
+  s19:{ text:"A nurse asks Roisin, a medical student, to act as chaperone for an intimate examination that is about to begin. Roisin has not been trained as a chaperone." },
+  s20:{ text:"A busy registrar hands Sean, a medical student, a consent form and asks him to sign as the witness to a patient's signature. Sean does not fully understand the procedure being consented to.", ask:"How important are the following considerations for Sean?" },
+  s21:{ text:"A rail failure means Nuala will be about an hour late for the start of her hospital placement.", ask:"How important are the following considerations for Nuala?" },
+  s22:{ text:"On her last day of a placement, a patient Cormac has been seeing regularly offers him a wrapped gift as a thank you.", ask:"How important are the following considerations for Cormac?" }
 };
 
 window.BANK_SJT = [
@@ -221,5 +229,133 @@ window.BANK_SJT = [
     why:"Important. Continuity of care is genuinely valuable to learn and it is a legitimate reason to ask. It ranks below the patient's wishes and below the new team's agreement." },
   { id:"sjt14d", s:"s14", fmt:"important", ans:2,
     stem:"Whether she has already spent several days following this patient.",
-    why:"Of minor importance. Time already invested is a sunk cost. It slightly strengthens the educational case for continuity, but it creates no claim on the patient or the new team." }
+    why:"Of minor importance. Time already invested is a sunk cost. It slightly strengthens the educational case for continuity, but it creates no claim on the patient or the new team." },
+
+  { id:"sjt15a", s:"s15", fmt:"appropriate", ans:0,
+    stem:"Explain that she cannot share information without the patient's permission, and offer to let the nursing staff know he would like an update.",
+    why:"Very appropriate. Confidentiality belongs to the patient, not to the family, and Maeve has no way of knowing what her mother wants shared. Declining while routing the request to someone who can act is the ideal shape." },
+
+  { id:"sjt15b", s:"s15", fmt:"appropriate", ans:2,
+    stem:"Give him a general sense of how things are going without mentioning any specific results.",
+    why:"Inappropriate, but not awful. The instinct to be kind is understandable and no test result is named, which keeps it off the bottom band. But 'she is doing well' is still disclosure, and it is not Maeve's to give." },
+
+  { id:"sjt15c", s:"s15", fmt:"appropriate", ans:2,
+    stem:"Tell him she knows nothing about his mother's care.",
+    why:"Inappropriate, but not awful. It avoids a breach, which is the main risk. But it is untrue, and if he later learns she was involved in his mother's care it damages trust in the whole team. Declining to share is not the same as denying knowledge." },
+
+  { id:"sjt15d", s:"s15", fmt:"appropriate", ans:1,
+    stem:"Tell him he will need to speak to the consultant, and carry on to her next task.",
+    why:"Appropriate, but not ideal. The direction is correct and nothing confidential is disclosed. It is not ideal because it leaves a worried relative to organise it himself when a word to the nurse would have moved things along." },
+
+  { id:"sjt16a", s:"s16", fmt:"appropriate", ans:0,
+    stem:"Tell the nurse about the blank allergy box before the antibiotics are given.",
+    why:"Very appropriate. An unchecked allergy status before intravenous antibiotics is a genuine safety risk, and this addresses it before any harm can occur. Raise it now, not later." },
+
+  { id:"sjt16b", s:"s16", fmt:"appropriate", ans:2,
+    stem:"Wait until the ward round to raise it, so as not to interrupt the nurse mid-task.",
+    why:"Inappropriate, but not awful. He does intend to raise it, which is better than ignoring it. But the antibiotics are due within the hour, so the delay could allow exactly the harm he has spotted. Courtesy does not outrank timing where safety is concerned." },
+
+  { id:"sjt16c", s:"s16", fmt:"appropriate", ans:3,
+    stem:"Assume the team will already have checked and say nothing.",
+    why:"Very inappropriate. Assuming someone else has dealt with it is the reasoning behind a large share of real drug errors. A blank box is precisely the signal that it may not have been checked." },
+
+  { id:"sjt16d", s:"s16", fmt:"appropriate", ans:2,
+    stem:"Ask the patient about allergies and write the answer into the drug chart himself.",
+    why:"Inappropriate, but not awful. Asking the patient is sensible and the information is useful. Entering it on a drug chart is outside a student's role, and a chart that looks complete may stop a qualified member of staff from checking properly." },
+
+  { id:"sjt17a", s:"s17", fmt:"appropriate", ans:0,
+    stem:"Message the student privately, explain why an identifiable hospital plus a complaint about a shift is a problem, and ask them to take it down.",
+    why:"Very appropriate. Direct, private, prompt and educational. The student may genuinely not have realised that identifying the workplace is the issue rather than showing a patient." },
+
+  { id:"sjt17b", s:"s17", fmt:"appropriate", ans:2,
+    stem:"Reply to the post publicly telling them to delete it.",
+    why:"Inappropriate, but not awful. The concern is right and acting quickly matters. Doing it in public draws attention to the very post that should be seen by fewer people, and embarrasses a colleague unnecessarily." },
+
+  { id:"sjt17c", s:"s17", fmt:"appropriate", ans:3,
+    stem:"Do nothing, since no patient appears in the photograph.",
+    why:"Very inappropriate. Professionalism online is not limited to whether a patient is visible. An identifiable hospital and a public complaint about a shift can breach confidentiality by inference and damage public confidence." },
+
+  { id:"sjt17d", s:"s17", fmt:"appropriate", ans:1,
+    stem:"Report the post to the medical school without contacting the student.",
+    why:"Appropriate, but not ideal. Social media conduct is taken seriously and escalating is legitimate, so this is not wrong. It is not ideal as a first step for something the student would very likely fix at once if simply asked." },
+
+  { id:"sjt18a", s:"s18", fmt:"appropriate", ans:0,
+    stem:"Email the group straight away with the correction and an explanation of what she got wrong.",
+    why:"Very appropriate. Prompt, honest and reaches everyone before they revise from the error. Admitting your own mistake without being prompted is exactly what professional honesty looks like." },
+
+  { id:"sjt18b", s:"s18", fmt:"appropriate", ans:1,
+    stem:"Correct it at the beginning of next week's session.",
+    why:"Appropriate, but not ideal. The correction does get made, publicly, to the right audience. It is not ideal because a week is long enough for the group to have learned and repeated the wrong information." },
+
+  { id:"sjt18c", s:"s18", fmt:"appropriate", ans:2,
+    stem:"Work the correct version into a future session without mentioning that the earlier information was wrong.",
+    why:"Inappropriate, but not awful. The right content eventually reaches the group. But quietly overwriting an error leaves anyone who wrote down the original version unaware they need to change it, and it dodges the admission." },
+
+  { id:"sjt18d", s:"s18", fmt:"appropriate", ans:3,
+    stem:"Say nothing, on the basis that it was a small point and nobody noticed.",
+    why:"Very inappropriate. Nobody noticing is the reason to speak, not the reason to stay quiet. Incorrect clinical information left uncorrected can be carried a long way by the people who trusted it." },
+
+  { id:"sjt19a", s:"s19", fmt:"appropriate", ans:0,
+    stem:"Explain that she has not been trained as a chaperone and ask whether a trained member of staff is available.",
+    why:"Very appropriate. Chaperoning is a defined role with a purpose, and it protects the patient and the examiner. Saying clearly what she is and is not trained for, while helping find a solution, is good judgement rather than obstruction." },
+
+  { id:"sjt19b", s:"s19", fmt:"appropriate", ans:1,
+    stem:"Agree, but first tell the patient she is a student and check the patient is content for her to stay.",
+    why:"Appropriate, but not ideal. Seeking the patient's agreement is right and is better than simply complying. It is still not ideal, because consent from the patient does not make an untrained student a chaperone." },
+
+  { id:"sjt19c", s:"s19", fmt:"appropriate", ans:2,
+    stem:"Agree without comment, because the nurse asked and the patient is already waiting.",
+    why:"Inappropriate, but not awful. She is trying to be helpful under time pressure and no harm may follow. But she is taking on a safeguarding role she is not trained for, and the patient is entitled to a proper chaperone." },
+
+  { id:"sjt19d", s:"s19", fmt:"appropriate", ans:1,
+    stem:"Say she would rather not and leave it to the nurse to find someone else.",
+    why:"Appropriate, but not ideal. Declining something outside her competence is reasonable and she is not obliged to explain herself. It is not ideal because a brief reason would have helped the nurse solve the problem faster." },
+
+  { id:"sjt20a", s:"s20", fmt:"important", ans:0,
+    stem:"Whether Sean understands what the patient is being asked to consent to.",
+    why:"Very important. Witnessing a signature carries a meaning, and putting his name to a document he does not understand is not something he can defend afterwards." },
+
+  { id:"sjt20b", s:"s20", fmt:"important", ans:0,
+    stem:"Whether the clinician has already answered the patient's questions about the procedure.",
+    why:"Very important. Valid consent depends on the patient being properly informed. If that conversation has not happened, the form is the least of the problems." },
+
+  { id:"sjt20c", s:"s20", fmt:"important", ans:1,
+    stem:"Whether hospital policy allows a medical student to witness a consent form.",
+    why:"Important. Local policy governs what he may do and he should know it. It is not the whole answer, though, because even where policy permits it he still should not witness something he does not understand." },
+
+  { id:"sjt20d", s:"s20", fmt:"important", ans:3,
+    stem:"Whether declining will hold up the registrar's list.",
+    why:"Not important at all. Pressure on the timetable is real but it cannot justify putting his name to a consent process he cannot vouch for. Convenience never outranks consent." },
+
+  { id:"sjt21a", s:"s21", fmt:"important", ans:0,
+    stem:"Whether she has told the placement supervisor as soon as she knew.",
+    why:"Very important. Early warning is the one thing that lets the team adjust. It is also the part entirely within her control." },
+
+  { id:"sjt21b", s:"s21", fmt:"important", ans:1,
+    stem:"Whether her absence leaves a clinic short of staff.",
+    why:"Important. It affects how disruptive the delay is and how urgently she needs to let people know, though it does not change what she should do." },
+
+  { id:"sjt21c", s:"s21", fmt:"important", ans:2,
+    stem:"Whether the delay was genuinely outside her control.",
+    why:"Of minor importance. It bears a little on how the lateness should be viewed afterwards, but it changes nothing about what she should do now, and a good explanation is not a substitute for telling someone." },
+
+  { id:"sjt21d", s:"s21", fmt:"important", ans:3,
+    stem:"Whether other students on the placement have been late before.",
+    why:"Not important at all. What others have done has no bearing on her own responsibility. Comparisons with colleagues are almost always irrelevant in this section." },
+
+  { id:"sjt22a", s:"s22", fmt:"important", ans:1,
+    stem:"Whether the hospital has a policy on accepting gifts from patients.",
+    why:"Important. Most organisations do have one, often with a value threshold and a register, and following it protects both of them. It guides the decision without settling it on its own." },
+
+  { id:"sjt22b", s:"s22", fmt:"important", ans:1,
+    stem:"Whether the patient is still under the team's care.",
+    why:"Important. A gift from someone whose ongoing treatment could be influenced is a different matter from a farewell present at the end of an episode of care." },
+
+  { id:"sjt22c", s:"s22", fmt:"important", ans:2,
+    stem:"The monetary value of the gift.",
+    why:"Of minor importance. Value matters at the margins and policies often set a threshold, but a small token and an expensive present raise the same question about the relationship, just to different degrees." },
+
+  { id:"sjt22d", s:"s22", fmt:"important", ans:2,
+    stem:"Whether refusing would cause offence.",
+    why:"Of minor importance. Worth a thought, because a blunt refusal can hurt someone expressing genuine gratitude, and there are graceful ways to decline. It does not determine whether accepting is appropriate." }
 ];
