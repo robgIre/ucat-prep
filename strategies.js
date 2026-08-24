@@ -221,8 +221,8 @@ window.PLAN = [
       ["Decision Making strategy. Do the syllogism drill untimed. Get the reversal and contrapositive rules solid.","40 min"],
       ["Quantitative Reasoning strategy. Do the mental maths sprint twice. Learn the fraction and percentage conversions.","40 min"],
       ["Situational Judgement strategy. Read the ten principles, then do 2 scenarios untimed.","35 min"],
-      ["Official UCAT Question Tutorials on ucat.ac.uk - all four subtests.","60 min"],
-      ["Rest, or a light review of anything that felt weak.","0-20 min"]
+      ["Official Question Tutorials on ucat.ac.uk - all four subtests. This is UCAT's own strategy guidance; where it disagrees with this app, it wins.","60 min"],
+      ["Rest, or a light review of anything that felt weak. Use a laptop for the official material, not a phone - UCAT build those questions for desktop.","0-20 min"]
     ] },
   { w:2, title:"Week 2 - build the pace",
     aim:"Introduce the clock. Expect accuracy to drop at first, that is normal and it recovers.",
@@ -231,8 +231,8 @@ window.PLAN = [
       ["Timed DM section. Focus on always answering all five statements.","50 min"],
       ["Timed QR section, plus a mental maths sprint first as a warm-up.","40 min"],
       ["Timed SJT section. 23 seconds a question - practise not deliberating.","35 min"],
-      ["Official UCAT Question Banks, weakest section first.","60 min"],
-      ["Official UCAT Question Banks, second weakest section.","60 min"],
+      ["Official question banks - there are 15 of them (VR x4, DM x4, QR x4, SJT x3). Start with your weakest subtest and press 'Explain Answer' on every question you get wrong.","60 min"],
+      ["Official question banks, second weakest subtest. Keep a written list of which ones you have done - the site does not save your progress.","60 min"],
       ["Rest.","0 min"]
     ] },
   { w:3, title:"Week 3 - full mocks",
