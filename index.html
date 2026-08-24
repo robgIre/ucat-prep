@@ -224,6 +224,7 @@ kbd{background:var(--bg2);border:1px solid var(--line);border-bottom-width:2px;b
 <script src="bank-qr.js"></script>
 <script src="bank-sjt.js"></script>
 <script src="strategies.js"></script>
+<script src="generators.js"></script>
 <script>
 "use strict";
 
@@ -244,6 +245,16 @@ function fill(o){
 function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
 
 var BANK={vr:BANK_VR,dm:BANK_DM,qr:BANK_QR,sjt:BANK_SJT};
+var GENLABEL={
+  pctchange:"Percentage change", reverse:"Reverse percentage", succ:"Successive percentages",
+  ratio3:"Ratio sharing", ratiomix:"Ratio mixtures", speed:"Speed, distance and time",
+  meanadd:"Averages (value added)", weighted:"Weighted mean", rates:"Combined rates",
+  scale:"Scale and units", fx:"Currency", dose:"Drug dosing", conc:"Concentration",
+  compound:"Compound growth", area:"Area and cost", pctofpct:"Percentage of a percentage",
+  tabletotal:"Table totals", tablemax:"Comparing rows in a table",
+  syll:"Syllogisms", venn2:"Venn, two sets", venn3:"Venn, three sets",
+  probwo:"Probability without replacement", atleast:"At least one", dice:"Dice probability"
+};
 var SEC={vr:"Verbal Reasoning",dm:"Decision Making",qr:"Quantitative Reasoning",sjt:"Situational Judgement"};
 var PERQ={}; FORMAT.sections.forEach(function(s){ PERQ[s.key]=s.mins*60/s.q; });
 
@@ -486,6 +497,19 @@ function vDrill(v){
   c.innerHTML='<h2>Drill</h2><p class="tiny muted">Untimed, with the explanation shown after every question. This is where the learning happens &mdash; read the explanation even when you get it right, because the reasoning matters more than the answer.</p>';
   v.appendChild(c);
 
+  var g=el("div","card");
+  g.innerHTML='<h3>Unlimited practice <span class="pill">newly generated every time</span></h3>'+
+    '<p class="tiny muted">Quantitative Reasoning and Decision Making questions are built fresh on demand, with different numbers every time, so there is nothing to memorise and never a shortage. '+
+    'Verbal Reasoning and Situational Judgement cannot be generated this way &mdash; use the fixed sets below and the official banks for those.</p>';
+  var gr=el("div","row");
+  [["qr",20],["qr",40],["dm",20],["dm",35]].forEach(function(x){
+    var b=el("button","btn sm",SEC[x[0]].split(" ").map(function(w){return w[0];}).join("")+" &middot; "+x[1]+" questions");
+    b.onclick=function(){ startRun(x[0],"drill",GEN.batch(x[0],x[1])); };
+    gr.appendChild(b);
+  });
+  g.appendChild(gr);
+  v.appendChild(g);
+
   ["vr","dm","qr","sjt"].forEach(function(k){
     var card=el("div","card");
     card.innerHTML='<h3>'+SEC[k]+' <span class="pill">'+BANK[k].length+' questions</span></h3>';
@@ -538,6 +562,20 @@ function vTimed(v){
     g.appendChild(b);
   });
   v.appendChild(g);
+
+  var gf=el("div","card");
+  gf.innerHTML='<h3>Full-length generated sections <span class="pill">exact exam length</span></h3>'+
+    '<p class="tiny muted">These are the real thing for length as well as pace: 36 questions in 26 minutes for Quantitative Reasoning, 35 in 37 minutes for Decision Making, freshly generated each time. '+
+    'Use them to build stamina, not just speed.</p>';
+  var gfr=el("div","row");
+  [["qr",36],["dm",35]].forEach(function(x){
+    var sc=FORMAT.sections.filter(function(s){return s.key===x[0];})[0];
+    var b=el("button","btn sm",SEC[x[0]]+" &middot; "+x[1]+"Q in "+sc.mins+" min");
+    b.onclick=function(){ startRun(x[0],"timed",GEN.batch(x[0],x[1])); };
+    gfr.appendChild(b);
+  });
+  gf.appendChild(gfr);
+  v.appendChild(gf);
 
   var w=el("div","card");
   w.innerHTML='<h3>Where the full mocks are</h3><p class="tiny muted">This app cannot replace a full-length mock. There are four official ones, free, and they are built by the people who write the exam: '+
@@ -647,6 +685,25 @@ function vStats(v){
     if(rows) card.innerHTML+='<table style="margin-top:14px"><thead><tr><th>Question type</th><th>Correct</th><th style="width:38%">&nbsp;</th><th style="text-align:right">Rate</th></tr></thead><tbody>'+rows+'</tbody></table>';
     v.appendChild(card);
   });
+
+  // generated practice, tracked by question type rather than by item
+  var gk=Object.keys(S.seen).filter(function(k){ return k.indexOf("gen:")===0; });
+  if(gk.length){
+    var gc=el("div","card");
+    var gn=0,go=0,grows="";
+    gk.map(function(k){
+      var s=S.seen[k];
+      return { name:GENLABEL[k.slice(4)]||k.slice(4), n:s.n, ok:s.ok, p:pct(s.ok,s.n) };
+    }).sort(function(a,b){ return a.p-b.p; }).forEach(function(x){
+      gn+=x.n; go+=x.ok;
+      grows+='<tr><td>'+esc(x.name)+'</td><td>'+x.ok+'/'+x.n+'</td><td><div class="bar" style="margin:0"><i style="width:'+x.p+
+        '%;background:'+(x.p>=75?"var(--ok)":x.p>=50?"var(--warn)":"var(--bad)")+'"></i></div></td><td style="text-align:right"><b>'+x.p+'%</b></td></tr>';
+    });
+    gc.innerHTML='<h3>Generated practice <span class="pill">'+gn+' answered</span></h3>'+
+      '<p class="tiny muted">Tracked by question type across every generated set, weakest first. This is the list to work down.</p>'+
+      '<table style="margin-top:12px"><thead><tr><th>Type</th><th>Correct</th><th style="width:38%">&nbsp;</th><th style="text-align:right">Rate</th></tr></thead><tbody>'+grows+'</tbody></table>';
+    v.appendChild(gc);
+  }
 
   if(S.sprint.length){
     var b=Math.max.apply(null,S.sprint);
@@ -797,6 +854,8 @@ function focusHL(){
   }catch(e){}
 }
 
+function stemHTML(q){ return (q.raw || R.sec==="qr") ? q.stem : esc(q.stem); }
+
 function renderQ(q){
   var box=el("div");
   var reveal = R.mode==="drill" && R.revealed[q.id];
@@ -833,7 +892,7 @@ function renderQ(q){
       var s=QR_SETS[q.set];
       box.appendChild(el("div","setnote",'<b>'+esc(s.title)+'</b>'+s.html));
     }
-    box.appendChild(el("div","qstem",'<span class="pill">'+esc(q.topic)+'</span><div style="margin-top:9px">'+q.stem+'</div>'));
+    box.appendChild(el("div","qstem",'<span class="pill">'+esc(q.topic)+'</span><div style="margin-top:9px">'+stemHTML(q)+'</div>'));
     box.appendChild(optionList(q,q.opts,reveal));
     if(reveal) box.appendChild(feedback(q));
     return box;
@@ -854,7 +913,7 @@ function renderQ(q){
   var lbl={syllogism:"Syllogism",puzzle:"Logic puzzle",argument:"Strongest argument",venn:"Venn / sets",prob:"Probability",interpret:"Interpreting data"}[q.sub];
   if(q.kind==="five"){
     box.appendChild(el("div","qstem",'<span class="pill">'+lbl+'</span> <span class="pill">2 marks</span>'+
-      '<div style="margin-top:10px">'+esc(q.stem)+'</div>'+
+      '<div style="margin-top:10px">'+stemHTML(q)+'</div>'+
       '<div class="tiny muted" style="margin-top:8px">'+esc(q.ask)+' Answer all five &mdash; a partially correct response still scores 1 mark.</div>'));
     var list=el("div","fst");
     var cur=R.ans[q.id]||{};
@@ -878,7 +937,7 @@ function renderQ(q){
     if(reveal) box.appendChild(feedback(q,true));
     return box;
   }
-  box.appendChild(el("div","qstem",'<span class="pill">'+lbl+'</span><div style="margin-top:9px">'+esc(q.stem)+'</div>'));
+  box.appendChild(el("div","qstem",'<span class="pill">'+lbl+'</span><div style="margin-top:9px">'+stemHTML(q)+'</div>'));
   box.appendChild(optionList(q,q.opts,reveal));
   if(reveal) box.appendChild(feedback(q));
   return box;
@@ -919,9 +978,10 @@ function marksFor(q){
   return R.ans[q.id]===q.ans?1:0;
 }
 function recordSeen(q){
-  var s=S.seen[q.id]||{n:0,ok:0};
+  var key=q.sk||q.id;
+  var s=S.seen[key]||{n:0,ok:0};
   s.n++; if(marksFor(q)===maxMarks(q)) s.ok++;
-  S.seen[q.id]=s; save();
+  S.seen[key]=s; save();
 }
 
 function next(){ if(R.i<R.qs.length-1){R.i++;drawExam();} }
@@ -1076,7 +1136,7 @@ function showResults(run,auto){
       correct = opts[q.ans];
     }
     d.innerHTML='<div class="rh"><b style="color:var(--tx)">Q'+(i+1)+'</b><span class="pill">'+m+'/'+mx+' mark'+(mx===1?'':'s')+'</span></div>'+
-      '<div style="font-size:.94rem;margin-bottom:8px">'+ (q.kind==="five"? esc(q.stem) : (sec==="qr"? q.stem : esc(q.stem))) +'</div>'+
+      '<div style="font-size:.94rem;margin-bottom:8px">'+ (q.raw||sec==="qr" ? q.stem : esc(q.stem)) +'</div>'+
       '<div class="tiny" style="margin-bottom:6px"><span class="muted">Your answer:</span> '+esc(String(yours))+
       ' &nbsp;&middot;&nbsp; <span class="muted">Correct:</span> <b>'+esc(String(correct))+'</b></div>'+
       (sec==="vr" && q.ev && q.ev.length
