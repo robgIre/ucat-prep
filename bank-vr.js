@@ -451,5 +451,181 @@ window.BANK_VR = [
     stem:"Why does the passage say night-time temperature matters particularly for health?",
     opts:["Because dark surfaces absorb more solar radiation than vegetation","Because street geometry traps radiation that would otherwise escape","Because buildings and vehicles release waste heat directly","Because it prevents the body recovering from daytime heat stress"],
     ev:["Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality during heatwaves correlates more closely with night-time minimums than with daytime maximums."],
-    why:"D. Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality tracks night-time minimums more closely than daytime maximums. A, B and C appear in the passage but none is given as the health reason.", ans:3 }
+    why:"D. Sustained high night-time temperatures prevent the physiological recovery that follows daytime heat stress, and excess mortality tracks night-time minimums more closely than daytime maximums. A, B and C appear in the passage but none is given as the health reason.", ans:3 },
+
+  { id:"vr1e", p:"p1", kind:"tfct", syn:true,
+    stem:"Resistance genes existed before antibiotics were manufactured, and such genes can pass between different bacterial species.",
+    ev:["laid down long before any clinical use of these drugs","This allows a resistance gene that first arose in one species to appear rapidly in another"],
+    why:"True, but it needs two separate parts of the passage. The permafrost finding establishes the first half; horizontal gene transfer establishes the second. Neither sentence alone settles the statement.", ans:0 },
+
+  { id:"vr1f", p:"p1", kind:"mcq", syn:true,
+    stem:"Taking the passage as a whole, what best explains how resistance became common in species that cause serious human disease?",
+    opts:["Widespread use removed susceptible strains, and horizontal transfer moved resistance genes between species","Resistance genes first evolved in response to antibiotics manufactured after 1940","Pharmaceutical companies stopped developing replacement antibiotics","Soil bacteria produce antibiotic compounds to compete with one another"],
+    ev:["Susceptible strains were removed; resistant ones flourished.","This allows a resistance gene that first arose in one species to appear rapidly in another, including in species that cause serious human disease."],
+    why:"A. Two mechanisms have to be combined: mass use removed susceptible strains, and horizontal transfer carried resistance genes into other species. B is contradicted by the permafrost evidence, C is disputed in the passage and concerns new drugs rather than spread, and D explains where resistance came from originally, not how it reached pathogens.", ans:0 },
+
+  { id:"vr2e", p:"p2", kind:"tfct", syn:true,
+    stem:"The passage presents the movement of memories from the hippocampus to the neocortex as something researchers have observed directly.",
+    ev:["the same patterns appear shortly afterwards in the neocortex","The prevailing interpretation is that experiences are gradually transferred"],
+    why:"False, and you need two places to be sure. The passage reports only the order in which patterns appear, then calls the transfer account 'the prevailing interpretation'. An interpretation of a sequence is not a direct observation.", ans:1 },
+
+  { id:"vr2f", p:"p2", kind:"mcq", syn:true,
+    stem:"How does the passage's treatment of memory consolidation compare with its treatment of the neurodegeneration link?",
+    opts:["Both are presented as established causes","Consolidation is well supported, while the neurodegeneration link remains correlational","The neurodegeneration link is the better supported of the two","Neither has any experimental support"],
+    ev:["Among the best supported of these functions is memory consolidation.","though the evidence in humans remains correlational and no causal mechanism has been established"],
+    why:"B. Consolidation is described as among the best supported functions of sleep; the neurodegeneration link is called speculation resting on correlational evidence. The comparison requires reading both paragraphs.", ans:1 },
+
+  { id:"vr3e", p:"p3", kind:"tfct", syn:true,
+    stem:"Blocking drainage ditches has failed to bring back the vegetation characteristic of bogs.",
+    ev:["Restoration efforts generally focus on blocking drainage ditches to raise the water table.","Results have been encouraging in terms of hydrology and the return of characteristic vegetation such as Sphagnum mosses."],
+    why:"False. Restoration works by blocking ditches to raise the water table, and results are described as encouraging both for hydrology and for the return of Sphagnum mosses. What remains unclear is the carbon accumulation rate, which is a different claim.", ans:1 },
+
+  { id:"vr3f", p:"p3", kind:"mcq", syn:true,
+    stem:"Which combination of facts best explains the passage's conclusion that preserving intact bog beats restoring damaged bog?",
+    opts:["Restoration has failed to return characteristic vegetation","Restored bogs release more carbon than drained ones","Peat accumulates very slowly, and it is unclear whether restored bogs regain their former rate","Peat extraction in Ireland has already ceased"],
+    ev:["a metre of peat may represent a thousand years of accumulation","Whether restored bogs recover their former rate of carbon accumulation within a useful timescale is less clear"],
+    why:"C. The slowness of accumulation and the uncertainty about whether restored bogs regain their former rate together make preservation the safer bet. A is contradicted, B is never claimed, and D is not stated.", ans:2 },
+
+  { id:"vr4e", p:"p4", kind:"tfct", syn:true,
+    stem:"Expectation can produce both improvement and harm in patients given an inactive treatment.",
+    ev:["Expectation appears to matter: patients told that an inert cream is an analgesic report less pain than those told nothing","the nocebo effect, in which the expectation of harm produces adverse symptoms"],
+    why:"True. The analgesic cream shows expectation producing benefit; the nocebo effect shows expectation producing harm. Both halves are needed.", ans:0 },
+
+  { id:"vr4f", p:"p4", kind:"mcq", syn:true,
+    stem:"A trial gives its placebo by injection and lists possible side effects in detail during consent. What should the researchers expect in the placebo arm?",
+    opts:["A small response and few reported side effects","No response, because the treatment is inactive","A large response but no reported side effects","A large response and more reported side effects than usual"],
+    ev:["Injections generally produce larger placebo responses than tablets","Trials that list side effects in detail during consent tend to record more of those side effects in the placebo arm."],
+    why:"D. Two separate findings combine: injections produce larger placebo responses than tablets, and detailed side-effect disclosure raises reported side effects in the placebo group. So expect both a large response and more side effects.", ans:3 },
+
+  { id:"vr5e", p:"p5", kind:"tfct", syn:true,
+    stem:"Printing reduced the cost of a book more in Europe than it did in Korea.",
+    ev:["The alphabetic writing systems of Europe, with their small character sets, made the economics of the system far more favourable than they had been for logographic scripts.","a collapse in the cost of a book"],
+    why:"Can't Tell, and this is a trap built from two real statements. The passage says European alphabets made the economics more favourable than for logographic scripts, and separately that costs collapsed. It never compares the cost of books between Europe and Korea. Two true facts do not license a comparison the author never makes.", ans:2 },
+
+  { id:"vr5f", p:"p5", kind:"mcq", syn:true,
+    stem:"Which pair of points from the passage most supports the view that the press's importance has been overstated?",
+    opts:["Movable type predated Gutenberg, and the distinctive effects took about fifty years to appear","Luther's tracts were printed in large numbers, and books became cheaper","Standardised editions allowed shared citation, and pamphlets spread rapidly","The ink adhered to metal, and the press was adapted from a screw press"],
+    ev:["Movable type had existed in Korea and China for centuries","For the first fifty years printers largely reproduced texts that were already circulating in manuscript"],
+    why:"A. Movable type predating Gutenberg undercuts the invention claim, and fifty years of merely reproducing manuscripts undercuts the immediacy claim. The other options list genuine effects of printing, which support the opposite case.", ans:0 },
+
+  { id:"vr6e", p:"p6", kind:"tfct", syn:true,
+    stem:"New parks produce a larger health benefit in low-income neighbourhoods than in wealthy ones.",
+    ev:["Studies that exploit natural experiments, such as the construction of a new park, offer better evidence","the benefit is greatest for lower-income groups, who typically have the least access"],
+    why:"Can't Tell. The passage says natural experiments such as new parks give better evidence, and separately that the benefit is greatest for lower-income groups. It never applies the second finding to the first. Combining two statements the author kept apart is the commonest way to get these wrong.", ans:2 },
+
+  { id:"vr6f", p:"p6", kind:"mcq", syn:true,
+    stem:"On what grounds does the passage report that some public health bodies argue for green space provision?",
+    opts:["That the average health effect is large enough to justify the cost","That those with the least access stand to gain the most","That natural experiments have produced conclusive evidence","That green areas are quieter and less polluted"],
+    ev:["the benefit is greatest for lower-income groups, who typically have the least access","This has led several public health bodies to argue that green space provision should be assessed on equity grounds rather than average effect alone."],
+    why:"B. The equity argument follows directly from the finding that those with least access gain most. A misstates the evidence, C and D are mentioned but are not the basis of the argument.", ans:1 },
+
+  { id:"vr7e", p:"p7", kind:"tfct", syn:true,
+    stem:"The passage offers a single explanation for why supplementation trials failed to reproduce the observational findings.",
+    ev:["One explanation is reverse causation.","A second is that trials have often recruited participants who were already replete"],
+    why:"False. Two are given: reverse causation, and the recruitment of participants who were already replete. Counting how many reasons a passage gives is a classic synthesis question.", ans:1 },
+
+  { id:"vr7f", p:"p7", kind:"mcq", syn:true,
+    stem:"Which observation would most support the reverse causation explanation?",
+    opts:["Supplementation helps deficient participants avoid respiratory infection","Winter sunlight above fifty degrees is too weak for synthesis","Becoming unwell reduces time outdoors and raises inflammation, lowering the measured level","Severe deficiency causes rickets in children"],
+    ev:["Illness reduces time spent outdoors and increases inflammation, which lowers measured vitamin D","Observational studies have linked low vitamin D status to cancer, cardiovascular disease, multiple sclerosis, respiratory infection and all-cause mortality."],
+    why:"C. Reverse causation says illness lowers measured vitamin D rather than the reverse, so evidence that developing illness itself depresses the reading is what supports it. A supports the opposite reading, B is about synthesis not causation, and D concerns severe deficiency, which is not in dispute.", ans:2 },
+
+  { id:"vr8e", p:"p8", kind:"tfct", syn:true,
+    stem:"Two of the proposed explanations for the missing plastic involve particles moving downwards out of the surface layer.",
+    ev:["Biofouling by algae and other organisms increases density until the particle sinks.","Ingestion by marine organisms transports plastic downward."],
+    why:"True. Biofouling increases density until the particle sinks, and ingestion transports plastic downward. Fragmentation, the third explanation, is about particles becoming too small to catch rather than sinking.", ans:0 },
+
+  { id:"vr8f", p:"p8", kind:"mcq", syn:true,
+    stem:"Why is the passage doubtful that consumer bans will substantially reduce the mass of plastic entering the ocean?",
+    opts:["Because bans have not reduced the occurrence of the banned items","Because most plastic already lies on the deep sea floor","Because fragmentation makes the total mass impossible to measure","Because most input comes from a few rivers and from fishing gear, which bans do not address"],
+    ev:["bans on particular single-use items have reduced their occurrence in coastal surveys","a large share originates from a small number of river catchments and from fishing gear, neither of which is addressed by consumer bans in high-income countries"],
+    why:"D. Bans demonstrably cut how often those items appear in coastal surveys, but most input comes from a few river catchments and from fishing gear, which such bans do not touch. Both halves are needed: the bans work, just not on the bulk of the problem.", ans:3 },
+
+  { id:"vr9e", p:"p9", kind:"tfct", syn:true,
+    stem:"Every one of the original bacterial genes has been lost from the mitochondrion.",
+    ev:["the great majority of the original bacterial genes were either lost or relocated to the host nucleus","Human mitochondria retain only thirty-seven genes"],
+    why:"False. The great majority were lost or moved to the nucleus, but human mitochondria retain thirty-seven. 'Great majority' and 'every' are not the same, and the second sentence settles it.", ans:1 },
+
+  { id:"vr9f", p:"p9", kind:"mcq", syn:true,
+    stem:"Which pair of observations most directly supports the claim that mitochondria descend from bacteria?",
+    opts:["They carry their own circular genome and their ribosomes resemble bacterial ones","They are affected by antibiotics and are present in almost all eukaryotes","Most of their genes moved to the nucleus and only thirty-seven remain","Their remaining proteins are hydrophobic and hard to import"],
+    ev:["mitochondria carry their own circular genome, distinct from that of the nucleus","their ribosomes resemble bacterial ribosomes more closely than those of the cell they inhabit"],
+    why:"A. A separate circular genome and bacteria-like ribosomes are both structural inheritances from a bacterial ancestor. B mixes a consequence with a distribution fact, C describes gene loss rather than ancestry, and D concerns why genes remain.", ans:0 },
+
+  { id:"vr10e", p:"p10", kind:"tfct", syn:true,
+    stem:"Restricting eating to daytime hours lowers the risk of cancer in shift workers.",
+    ev:["Interventions have been tried, including timed light exposure and restricting eating to daytime hours, and small trials suggest they can shift the clock measurably.","Whether they reduce disease over a working lifetime has not been established."],
+    why:"Can't Tell. Such interventions are reported to shift the clock measurably in small trials, and the passage then says explicitly that whether they reduce disease over a working lifetime has not been established. Shifting a clock is not the same as preventing disease.", ans:2 },
+
+  { id:"vr10f", p:"p10", kind:"mcq", syn:true,
+    stem:"Why does night work pull the peripheral clocks out of step with the master clock?",
+    opts:["The master clock stops working during the night","The master clock follows light while peripheral clocks respond partly to when a person eats","Cortisol secretion ceases entirely on night shifts","Shift workers tend to have poorer diets than day workers"],
+    ev:["This master clock is entrained principally by light reaching the retina","the peripheral clocks, which respond partly to meal timing, drift out of alignment with the master clock"],
+    why:"B. The two clocks answer to different cues: the master clock to light, the peripheral clocks partly to meal timing. Night work sends those cues in conflicting directions.", ans:1 },
+
+  { id:"vr11e", p:"p11", kind:"tfct", syn:true,
+    stem:"Carbonation offsets more of cement's emissions than substituting fly ash does.",
+    ev:["Substituting a portion of the cement with fly ash or ground blast furnace slag is established practice and cuts emissions per tonne","Estimates suggest this recovers a meaningful fraction of the process emissions over the life of a structure"],
+    why:"Can't Tell. The passage describes both, saying substitution cuts emissions per tonne and carbonation recovers a meaningful fraction. It never puts a figure on either in comparable terms, so no ranking is possible.", ans:2 },
+
+  { id:"vr11f", p:"p11", kind:"mcq", syn:true,
+    stem:"Which best captures the passage's assessment of the two substitution routes it describes?",
+    opts:["Both are ready for deployment at the scale required","Neither reduces emissions per tonne of concrete","One is established but depends on contracting industries; the other avoids the chemistry but is not yet at scale","Carbonation makes both of them unnecessary"],
+    ev:["both materials are by-products of coal power and steel making, industries that are themselves contracting","none has yet been produced at anything approaching the scale required"],
+    why:"C. One route works but depends on industries that are shrinking; the other sidesteps the chemistry but is not yet available at scale. Each limitation appears in a different sentence.", ans:2 },
+
+  { id:"vr12e", p:"p12", kind:"tfct", syn:true,
+    stem:"All three navigation mechanisms described have been demonstrated experimentally.",
+    ev:["A star compass has also been demonstrated","the receptor has not been identified with certainty"],
+    why:"False. The sun and star compasses have supporting experiments, but for magnetic sensing the receptor has not been identified with certainty and two rival hypotheses remain. 'All three' fails on the third.", ans:1 },
+
+  { id:"vr12f", p:"p12", kind:"mcq", syn:true,
+    stem:"What makes the passage confident that the sun compass and the internal clock are linked?",
+    opts:["Birds navigate only in daylight hours","The star compass depends on the sky's axis of rotation","Experienced adults can correct for displacement","Shifting a bird's light cycle produces a predictable error in its orientation"],
+    ev:["The best established is a sun compass, corrected for the time of day by the bird's internal clock.","Birds held under artificially shifted light cycles orient in a predictably wrong direction, which is strong evidence that the clock and the compass are coupled."],
+    why:"D. The experiment is the evidence: shift a bird's light cycle and its orientation error is predictable, which only makes sense if the compass is being corrected by the clock. The other options are true statements about other mechanisms.", ans:3 },
+
+  { id:"vr13e", p:"p13", kind:"tfct", syn:true,
+    stem:"The inscriptions point to a capability that the surviving gears do not confirm.",
+    ev:["inscriptions running to thousands of characters","Whether it also displayed the five planets known in antiquity is likely on the basis of the inscriptions but has not been demonstrated from surviving gearing."],
+    why:"True. Thousands of characters of inscription survive, and on their basis planetary display is thought likely, yet the passage says this has not been demonstrated from the gearing that remains.", ans:0 },
+
+  { id:"vr13f", p:"p13", kind:"mcq", syn:true,
+    stem:"Why did the mechanism remain poorly understood for decades after it was recovered?",
+    opts:["It was corroded into lumps, and only imaging later revealed the interior","The inscriptions were written in a language nobody could read","Specialists disagreed over whether the object was genuine","Bronze objects from the period were routinely melted down"],
+    ev:["Corroded into a few lumps of bronze, it yielded little to visual inspection.","X-ray tomography carried out from the 1970s onwards, and at much higher resolution after 2005, revealed at least thirty interlocking gears"],
+    why:"A. Two facts combine: it was corroded into lumps that revealed little to the eye, and it was imaging from the 1970s onward that exposed the gearing. D is offered in the passage as an explanation for something else entirely.", ans:0 },
+
+  { id:"vr14e", p:"p14", kind:"tfct", syn:true,
+    stem:"Statins reduce deaths from all causes in people who have no established cardiovascular disease.",
+    ev:["Controversy attaches to their use in primary prevention, that is, in people with no established cardiovascular disease.","Here the absolute benefit is smaller because the baseline risk is lower"],
+    why:"Can't Tell. The passage says the absolute benefit in primary prevention is smaller because baseline risk is lower, and that the argument is about where to set the threshold. It never states whether all-cause mortality falls in that group.", ans:2 },
+
+  { id:"vr14f", p:"p14", kind:"mcq", syn:true,
+    stem:"Which best describes what the disagreement over statins is actually about?",
+    opts:["Whether statins lower LDL cholesterol at all","Where to set the treatment threshold in people without established disease","Whether statins help those who have already had a heart attack","Whether patients genuinely experience muscle pain"],
+    ev:["Controversy attaches to their use in primary prevention","The disagreement is less about whether statins work than about where the threshold for treating an otherwise healthy person should be drawn."],
+    why:"B. The passage is explicit that the argument is less about whether statins work than about the treatment threshold in people without established disease. A, C and D are all matters the passage treats as settled.", ans:1 },
+
+  { id:"vr15e", p:"p15", kind:"tfct", syn:true,
+    stem:"The increases in young Welsh and Maori speakers show that school instruction alone can reverse language loss.",
+    ev:["Welsh and Maori have seen measurable increases in the number of young speakers following sustained investment in education and broadcasting.","What distinguishes the successes appears to be transmission within the home rather than instruction in school alone"],
+    why:"False. Those increases followed investment in education and broadcasting, but the passage then identifies transmission in the home, rather than instruction in school alone, as what distinguishes the successes. The second sentence directly rules out the claim.", ans:1 },
+
+  { id:"vr15f", p:"p15", kind:"mcq", syn:true,
+    stem:"Why does the passage treat Hebrew as a poor guide to what will work elsewhere?",
+    opts:["Because it has fewer speakers than Welsh or Maori","Because its revival came about through schooling rather than the home","Because it involved a state, an ideology and no shared alternative language","Because the shift to it took three generations"],
+    ev:["Hebrew is the example most often cited, though its circumstances were unusual, involving a state, an ideology and a population with no shared alternative.","Revitalisation has succeeded in some cases and failed in many others."],
+    why:"C. Its circumstances are described as unusual: a state, an ideology, and a population with no shared alternative language. That combination is not available to most endangered languages.", ans:2 },
+
+  { id:"vr16e", p:"p16", kind:"tfct", syn:true,
+    stem:"Planting street trees reduces deaths during heatwaves.",
+    ev:["Street trees cool reliably but require water, which is scarce in precisely the places where cooling is most needed.","excess mortality during heatwaves correlates more closely with night-time minimums than with daytime maximums"],
+    why:"Can't Tell. The passage says trees cool reliably, and separately that mortality tracks night-time temperature. It never links tree planting to a change in deaths. The inference is reasonable but the passage does not make it.", ans:2 },
+
+  { id:"vr16f", p:"p16", kind:"mcq", syn:true,
+    stem:"Why does the passage conclude that no single mitigation measure is adequate on its own?",
+    opts:["None of the measures has yet been tested in practice","The heat island effect is strongest at night","Permeable surfaces prevent evaporation from taking place","Reflective roofs can raise heating demand, and street trees need water that is scarce where it is needed"],
+    ev:["Reflective roofs perform best in hot dry conditions and can be counterproductive in cities with cold winters, where the same property increases heating demand.","Street trees cool reliably but require water, which is scarce in precisely the places where cooling is most needed."],
+    why:"D. Each measure carries a limitation stated in a different sentence: reflective roofs can raise heating demand in cold-winter cities, and street trees need water that is scarce where cooling is most needed.", ans:3 }
 ];

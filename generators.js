@@ -97,7 +97,7 @@ function(){
   var o=numOpts(r2(correct),
     [ r2(after*(up?1-pc/100:1+pc/100)), r2(after), r2(correct*1.1), r2(correct*0.9) ], money);
   return { id:uid("qr"), topic:"Reverse percentage",
-    stem:"After "+(up?"an increase":"a decrease")+" of <b>"+pc+"%</b>, a monthly cost is <b>"+money(after)+"</b>. What was it before the change?",
+    stem:"After "+(up?"an increase":"a decrease")+" of <b>"+pc+"%</b>, a monthly cost is <b>"+money(after)+"</b>. What was it before the change, to the nearest cent?",
     opts:o.opts, ans:o.ans,
     why:"Divide, do not add or subtract. "+money(after)+" / "+(up?(1+pc/100):(1-pc/100)).toFixed(2)+" = "+money(correct)+
         ". Taking "+pc+"% off "+money(after)+" gives "+money(after*(up?1-pc/100:1+pc/100))+", which is wrong and is always offered.",
@@ -111,7 +111,7 @@ function(){
   var o=numOpts(r2(correct),
     [ r2(price*(1-(d1+d2)/100)), r2(price*(1-d1/100)), r2(correct*1.06), r2(correct*0.94) ], money);
   return { id:uid("qr"), topic:"Successive percentages",
-    stem:"A "+pick(ITEMS)+" priced <b>"+money(price)+"</b> is reduced by <b>"+d1+"%</b>. At the till a further <b>"+d2+"%</b> is taken off the reduced price. What is the final price?",
+    stem:"A "+pick(ITEMS)+" priced <b>"+money(price)+"</b> is reduced by <b>"+d1+"%</b>. At the till a further <b>"+d2+"%</b> is taken off the reduced price. What is the final price, to the nearest cent?",
     opts:o.opts, ans:o.ans,
     why:"Multiply the factors: "+(1-d1/100).toFixed(2)+" x "+(1-d2/100).toFixed(2)+" = "+r2((1-d1/100)*(1-d2/100))+
         ", so the final price is "+money(correct)+". Successive discounts never add - "+d1+"% then "+d2+"% is not "+(d1+d2)+"% off, which would give "+money(price*(1-(d1+d2)/100))+".",
@@ -157,7 +157,7 @@ function(){
   var o=numOpts(r1(correct), [ r1(dist/(whole+mins/100)), r1(correct*1.1), r1(correct*0.9), r1(dist/(whole+1)) ],
     function(v){ return r1(v)+" km/h"; });
   return { id:uid("qr"), topic:"Speed",
-    stem:"A journey of <b>"+commas(dist)+" km</b> takes <b>"+timeStr+"</b>. What is the average speed?",
+    stem:"A journey of <b>"+commas(dist)+" km</b> takes <b>"+timeStr+"</b>. What is the average speed, to one decimal place?",
     opts:o.opts, ans:o.ans,
     why:(mins? "Convert the minutes to a decimal fraction of an hour first: "+mins+"/60 = "+r2(mins/60)+", so the time is "+hrs+" hours. "
               : "The time is "+hrs+" hours. ")+
@@ -203,7 +203,7 @@ function(){
   var o=numOpts(r2(correct), [ (t1+t2)/2, t1+t2, r2(correct*1.15), r2(correct*0.85) ],
     function(v){ return r2(v)+" minutes"; });
   return { id:uid("qr"), topic:"Rates",
-    stem:"One tap fills a <b>"+cap+" litre</b> tank in <b>"+t1+" minutes</b>. A second tap fills the same tank in <b>"+t2+" minutes</b>. How long does it take with both taps running?",
+    stem:"One tap fills a <b>"+cap+" litre</b> tank in <b>"+t1+" minutes</b>. A second tap fills the same tank in <b>"+t2+" minutes</b>. How long does it take with both taps running? Give your answer to two decimal places.",
     opts:o.opts, ans:o.ans,
     why:"Convert to rates and add them: "+r2(cap/t1)+" litres/min and "+r2(cap/t2)+" litres/min give "+r2(cap/t1+cap/t2)+
         " litres/min, so "+cap+"/"+r2(cap/t1+cap/t2)+" = "+r2(correct)+" minutes. Averaging the two times gives "+r2((t1+t2)/2)+
@@ -218,7 +218,7 @@ function(){
   var o=numOpts(r2(km), [ r2(km*10), r2(km/10), r2(km*100), r2(km/100) ],
     function(v){ return r2(v)+" km"; });
   return { id:uid("qr"), topic:"Scale and units",
-    stem:"On a map with a scale of <b>1 : "+commas(scale)+"</b>, two points are <b>"+cm+" cm</b> apart. What is the actual distance?",
+    stem:"On a map with a scale of <b>1 : "+commas(scale)+"</b>, two points are <b>"+cm+" cm</b> apart. What is the actual distance, to two decimal places?",
     opts:o.opts, ans:o.ans,
     why:cm+" x "+commas(scale)+" = "+commas(cm*scale)+" cm. Divide by 100 for metres ("+commas(r2(cm*scale/100))+
         " m) and by 1,000 again for kilometres, giving "+r2(km)+" km. Every option here has the same digits, so this is purely a units question.",
@@ -235,8 +235,8 @@ function(){
     function(v){ return toEuro ? money(v) : (r2(v)+" "+cur); });
   return { id:uid("qr"), topic:"Currency",
     stem: toEuro
-      ? "One euro buys <b>"+rate+" "+cur+"</b>. A bill comes to <b>"+commas(amt)+" "+cur+"</b>. What is it in euro?"
-      : "One euro buys <b>"+rate+" "+cur+"</b>. An item costs <b>"+money0(amt)+"</b>. What is it in "+cur+"?",
+      ? "One euro buys <b>"+rate+" "+cur+"</b>. A bill comes to <b>"+commas(amt)+" "+cur+"</b>. What is it in euro, to the nearest cent?"
+      : "One euro buys <b>"+rate+" "+cur+"</b>. An item costs <b>"+money0(amt)+"</b>. What is it in "+cur+", to two decimal places?",
     opts:o.opts, ans:o.ans,
     why:(toEuro? "Divide by the rate: "+commas(amt)+" / "+rate+" = "+money(correct)+"."
                : "Multiply by the rate: "+amt+" x "+rate+" = "+r2(correct)+" "+cur+".")+
@@ -252,7 +252,7 @@ function(){
   var o=numOpts(r2(correct), [ daily, r2(daily/(doses+1)), r2(correct*2), r2(perKg*kg/2) ],
     function(v){ return commas(r2(v))+" mg"; });
   return { id:uid("qr"), topic:"Drug calculation",
-    stem:"A drug is prescribed at <b>"+perKg+" mg per kg</b> of body weight per day, divided into <b>"+doses+"</b> equal doses. What is each dose for a <b>"+kg+" kg</b> patient?",
+    stem:"A drug is prescribed at <b>"+perKg+" mg per kg</b> of body weight per day, divided into <b>"+doses+"</b> equal doses. What is each dose for a <b>"+kg+" kg</b> patient? Give your answer to two decimal places where needed.",
     opts:o.opts, ans:o.ans,
     why:"Daily total is "+perKg+" x "+kg+" = "+commas(r2(daily))+" mg. Divided into "+doses+" doses that is "+commas(r2(correct))+
         " mg each. The daily total is offered as a distractor - read to the end of the question.",
@@ -278,7 +278,7 @@ function(){
   var correct=p*Math.pow(1+r/100,y);
   var o=numOpts(Math.round(correct), [ Math.round(p*(1+r*y/100)), Math.round(correct*1.03), Math.round(correct*0.97), p ], money0);
   return { id:uid("qr"), topic:"Compound growth",
-    stem:"<b>"+money0(p)+"</b> is invested at <b>"+r+"%</b> compound interest per year. What is it worth after <b>"+y+"</b> years?",
+    stem:"<b>"+money0(p)+"</b> is invested at <b>"+r+"%</b> compound interest per year. What is it worth after <b>"+y+"</b> years, to the nearest euro?",
     opts:o.opts, ans:o.ans,
     why:money0(p)+" x "+(1+r/100).toFixed(2)+" to the power of "+y+" = "+money0(correct)+
         ". Simple interest would give "+money0(p*(1+r*y/100))+", and the gap between the two tells you the question is testing compounding.",
@@ -291,7 +291,7 @@ function(){
   var area=L*W, correct=area*rate;
   var o=numOpts(Math.round(correct), [ Math.round(2*(L+W)*rate), Math.round(area), Math.round(correct*1.15), Math.round(correct*0.85) ], money0);
   return { id:uid("qr"), topic:"Area",
-    stem:"A rectangular room measures <b>"+L+" m</b> by <b>"+W+" m</b>. Flooring costs <b>"+money0(rate)+" per square metre</b>. What is the total cost?",
+    stem:"A rectangular room measures <b>"+L+" m</b> by <b>"+W+" m</b>. Flooring costs <b>"+money0(rate)+" per square metre</b>. What is the total cost, to the nearest euro?",
     opts:o.opts, ans:o.ans,
     why:"Area is "+L+" x "+W+" = "+r2(area)+" square metres, so the cost is "+r2(area)+" x "+rate+" = "+money0(correct)+
         ". Using the perimeter instead of the area gives "+money0(2*(L+W)*rate)+".",
@@ -327,11 +327,100 @@ function(){
   var o=numOpts(Math.round(total),
     [ Math.round(total*1.08), Math.round(total*0.92), Math.round(total*1.15), Math.round(rows.reduce(function(a,r){return a+r.u;},0)) ], money0);
   return { id:uid("qr"), topic:"Tables",
-    stem:"<b>Weekly sales</b>"+html+"What was the total revenue for the week?",
+    stem:"<b>Weekly sales</b>"+html+"What was the total revenue for the week, to the nearest euro?",
     opts:o.opts, ans:o.ans,
     why:rows.map(function(r,i){ return r.n+" "+money(r.p)+" x "+commas(r.u)+" = "+money0(revs[i]); }).join("; ")+
         ". Total = "+money0(total)+".",
     meta:{k:"tabletotal",rows:rows} };
+},
+
+/* 19. multi-step: one row's share of the total, awkward figures */
+function(){
+  var rows=[], n=5, used={};
+  for(var i=0;i<n;i++){
+    var nm; do{ nm=pick(PRODUCTS); }while(used[nm]); used[nm]=1;
+    rows.push({ n:nm, p:r2(ri(137,879)/100), u:ri(63,487) });
+  }
+  var revs=rows.map(function(r){ return r.p*r.u; });
+  var total=revs.reduce(function(a,b){return a+b;},0);
+  var t=ri(0,n-1), correct=r1(revs[t]/total*100);
+  var html='<table class="dt"><thead><tr><th>Item</th><th>Price</th><th>Units sold</th></tr></thead><tbody>'+
+    rows.map(function(r){ return "<tr><td>"+r.n+"</td><td>"+money(r.p)+"</td><td>"+commas(r.u)+"</td></tr>"; }).join("")+
+    "</tbody></table>";
+  var o=numOpts(correct,
+    [ r1(rows[t].u/rows.reduce(function(a,r){return a+r.u;},0)*100), r1(correct*1.2), r1(correct*0.8), r1(100/n) ],
+    function(v){ return r1(v)+"%"; });
+  return { id:uid("qr"), topic:"Multi-step tables",
+    stem:"<b>Weekly sales</b>"+html+"What percentage of total revenue came from "+rows[t].n+"? Give your answer to one decimal place.",
+    opts:o.opts, ans:o.ans,
+    why:"Two steps, and the second is the one people skip. First find every row's revenue and add them: total "+money0(total)+
+        ". Then "+rows[t].n+" is "+money(rows[t].p)+" x "+commas(rows[t].u)+" = "+money0(revs[t])+", so "+money0(revs[t])+"/"+money0(total)+
+        " = "+r1(correct)+"%. Using the share of UNITS instead of revenue gives "+r1(rows[t].u/rows.reduce(function(a,r){return a+r.u;},0)*100)+
+        "%, which is offered and is wrong because the prices differ.",
+    meta:{k:"tablepct",rows:rows,t:t} };
+},
+
+/* 20. multi-step: derived rate, compare rows */
+function(){
+  var rows=[], used={};
+  for(var i=0;i<4;i++){
+    var nm; do{ nm=pick(DEPTS); }while(used[nm]); used[nm]=1;
+    rows.push({ n:nm, pat:ri(43,317), cost:ri(18,94)*1000+ri(1,999) });
+  }
+  var per=rows.map(function(r){ return r.cost/r.pat; });
+  var bi=per.indexOf(Math.max.apply(null,per));
+  var html='<table class="dt"><thead><tr><th>Department</th><th>Patients seen</th><th>Total cost</th></tr></thead><tbody>'+
+    rows.map(function(r){ return "<tr><td>"+r.n+"</td><td>"+commas(r.pat)+"</td><td>"+money0(r.cost)+"</td></tr>"; }).join("")+
+    "</tbody></table>";
+  var o=textOpts(rows[bi].n, rows.filter(function(_,i){return i!==bi;}).map(function(r){return r.n;}));
+  return { id:uid("qr"), topic:"Multi-step tables",
+    stem:"<b>Quarterly activity</b>"+html+"Which department has the highest cost per patient seen?",
+    opts:o.opts, ans:o.ans,
+    why:"Neither column answers this on its own - you have to derive the rate. "+
+        rows.map(function(r,i){ return r.n+" "+money0(r.cost)+"/"+commas(r.pat)+" = "+money0(per[i]); }).join("; ")+
+        ". Highest is "+rows[bi].n+". Estimate rather than dividing precisely: round each pair and only compute the close ones properly.",
+    meta:{k:"tablerate",rows:rows} };
+},
+
+/* 21. multi-step: percentage change in a combined total */
+function(){
+  var rows=[], used={};
+  for(var i=0;i<4;i++){
+    var nm; do{ nm=pick(PLACES); }while(used[nm]); used[nm]=1;
+    var a=ri(1207,8934); rows.push({ n:nm, a:a, b:Math.round(a*(0.82+Math.random()*0.46)) });
+  }
+  var t1=rows.reduce(function(x,r){return x+r.a;},0), t2=rows.reduce(function(x,r){return x+r.b;},0);
+  var correct=r1((t2-t1)/t1*100);
+  var html='<table class="dt"><thead><tr><th>Town</th><th>2020</th><th>2026</th></tr></thead><tbody>'+
+    rows.map(function(r){ return "<tr><td>"+r.n+"</td><td>"+commas(r.a)+"</td><td>"+commas(r.b)+"</td></tr>"; }).join("")+
+    "</tbody></table>";
+  var o=numOpts(correct, [ r1((t2-t1)/t2*100), r1(correct*1.3), r1(correct*0.7), r1(correct+ri(3,8)) ],
+    function(v){ return r1(v)+"%"; });
+  return { id:uid("qr"), topic:"Multi-step tables",
+    stem:"<b>Registered patients</b>"+html+"What was the percentage change in the combined total across all four towns? Give your answer to one decimal place, using a minus sign for a fall.",
+    opts:o.opts, ans:o.ans,
+    why:"Add each column before doing anything else: 2020 total "+commas(t1)+", 2026 total "+commas(t2)+
+        ". Change is "+commas(t2-t1)+", and dividing by the ORIGINAL total gives "+r1(correct)+
+        "%. Averaging the four individual percentage changes is not the same thing and gives a different answer, because the towns are different sizes.",
+    meta:{k:"twoyear",t1:t1,t2:t2} };
+},
+
+/* 22. multi-step: what is needed to hit an average */
+function(){
+  var total=pick([10,12,16,20]), done=Math.floor(total*pick([0.5,0.6,0.75]));
+  var target=ri(23,87), sofar=target+ri(-9,9);
+  var correct=(total*target - done*sofar)/(total-done);
+  if(correct<0) { sofar=target-ri(1,6); correct=(total*target - done*sofar)/(total-done); }
+  var o=numOpts(r1(correct), [ target, r1(2*target-sofar), r1(correct*1.15), r1(correct*0.85) ],
+    function(v){ return r1(v)+""; });
+  return { id:uid("qr"), topic:"Averages",
+    stem:"A ward must average <b>"+target+"</b> procedures a week across a <b>"+total+"</b> week period. Over the first <b>"+done+
+         "</b> weeks it averaged <b>"+sofar+"</b>. What average must it achieve over the remaining weeks? Give your answer to one decimal place.",
+    opts:o.opts, ans:o.ans,
+    why:"Work in totals throughout. The full period needs "+total+" x "+target+" = "+commas(total*target)+
+        " procedures. So far: "+done+" x "+sofar+" = "+commas(done*sofar)+". That leaves "+commas(total*target-done*sofar)+
+        " over "+(total-done)+" weeks, so "+r1(correct)+" a week. The trap is answering "+target+", the overall target, which only works if it is exactly on track.",
+    meta:{k:"avgtarget",total:total,done:done,target:target,sofar:sofar} };
 },
 
 /* 18. table set - which is highest */
@@ -390,6 +479,62 @@ var SYLL=[
      {t:"Some who "+g.c+" "+g.b+".", a:false, why:"Contradicts the chain: anyone who "+g.b+" cannot "+g.c+"."},
      {t:"Anyone who "+g.c+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the first premise."},
      {t:"Everyone who "+g.c+" "+g.b+".", a:false, why:"The opposite follows."}
+   ]; } },
+ { prem:function(g){ return "Some "+g.a+" "+g.b+". No one who "+g.b+" "+g.c+"."; },
+   sts:function(g){ return [
+     {t:"Some "+g.a+" do not "+g.c+".", a:true,  why:"Some "+g.a+" "+g.b+", and nobody who "+g.b+" "+g.c+"."},
+     {t:"No "+g.a+" "+g.c+".", a:false, why:"Only the subgroup that "+g.b+" is excluded. The rest are unconstrained."},
+     {t:"Some who "+g.c+" are among the "+g.a+".", a:false, why:"Nothing establishes this either way."},
+     {t:"Anyone who "+g.c+" does not "+g.b+".", a:true,  why:"Contrapositive of the second premise."},
+     {t:"All "+g.a+" "+g.b+".", a:false, why:"Only 'some' was stated."}
+   ]; } },
+ { prem:function(g){ return "All "+g.a+" "+g.c+". Some who "+g.b+" are not among the "+g.a+"."; },
+   sts:function(g){ return [
+     {t:"Some who "+g.b+" do not "+g.c+".", a:false, why:"They are not "+g.a+", but they may still "+g.c+" for other reasons."},
+     {t:"All "+g.a+" "+g.c+".", a:true,  why:"A restatement of the first premise."},
+     {t:"Some "+g.a+" "+g.b+".", a:false, why:"Not established. The premise only tells you about people who are NOT "+g.a+"."},
+     {t:"Anyone who does not "+g.c+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the first premise."},
+     {t:"Nobody who "+g.b+" is one of the "+g.a+".", a:false, why:"Only 'some' were said not to be."}
+   ]; } },
+ { prem:function(g){ return "No "+g.a+" "+g.b+". All who "+g.c+" are among the "+g.a+"."; },
+   sts:function(g){ return [
+     {t:"Nobody who "+g.c+" "+g.b+".", a:true,  why:"Chain it: anyone who "+g.c+" is one of the "+g.a+", and no "+g.a+" "+g.b+"."},
+     {t:"Anyone who "+g.b+" does not "+g.c+".", a:true,  why:"Contrapositive of that chain."},
+     {t:"All "+g.a+" "+g.c+".", a:false, why:"Reversal of the second premise."},
+     {t:"Some who "+g.b+" "+g.c+".", a:false, why:"Directly contradicted by the chain."},
+     {t:"Everyone who does not "+g.b+" is one of the "+g.a+".", a:false, why:"Reversal again, and plainly too strong."}
+   ]; } },
+ { prem:function(g){ return "Every "+g.a+" who "+g.b+" also "+g.c+". No "+g.a+" "+g.c+"."; },
+   sts:function(g){ return [
+     {t:"No "+g.a+" "+g.b+".", a:true,  why:"If one did, they would "+g.c+", which the second premise rules out."},
+     {t:"Some "+g.a+" "+g.b+".", a:false, why:"The premises together rule this out."},
+     {t:"Anyone who "+g.c+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the second premise."},
+     {t:"All "+g.a+" "+g.b+".", a:false, why:"The opposite follows."},
+     {t:"Everyone who "+g.b+" is one of the "+g.a+".", a:false, why:"Reversal. People outside the group are not covered."}
+   ]; } },
+ { prem:function(g){ return "Anyone who is one of the "+g.a+" "+g.b+". Some who "+g.b+" also "+g.c+"."; },
+   sts:function(g){ return [
+     {t:"All "+g.a+" "+g.b+".", a:true,  why:"A restatement of the first premise."},
+     {t:"Some "+g.a+" "+g.c+".", a:false, why:"The overlap between "+g.b+" and "+g.c+" need not contain any of the "+g.a+"."},
+     {t:"Some who "+g.c+" also "+g.b+".", a:true,  why:"'Some' statements convert."},
+     {t:"Anyone who does not "+g.b+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the first premise."},
+     {t:"Everyone who "+g.b+" is one of the "+g.a+".", a:false, why:"Reversal of the first premise."}
+   ]; } },
+ { prem:function(g){ return "No "+g.a+" "+g.b+". Some who "+g.c+" are among the "+g.a+"."; },
+   sts:function(g){ return [
+     {t:"Some who "+g.c+" do not "+g.b+".", a:true,  why:"Those who are "+g.a+" cannot "+g.b+"."},
+     {t:"Everyone who "+g.c+" is one of the "+g.a+".", a:false, why:"Only 'some' was stated."},
+     {t:"Nobody who "+g.c+" "+g.b+".", a:false, why:"Only the ones who are also "+g.a+" are excluded. Others may well "+g.b+"."},
+     {t:"Some "+g.a+" "+g.c+".", a:true,  why:"'Some' converts."},
+     {t:"Anyone who "+g.b+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the first premise."}
+   ]; } },
+ { prem:function(g){ return "All "+g.a+" "+g.b+". Everyone who "+g.b+" "+g.c+"."; },
+   sts:function(g){ return [
+     {t:"All "+g.a+" "+g.c+".", a:true,  why:"Two universal statements chain: "+g.a+" implies "+g.b+" implies "+g.c+"."},
+     {t:"Everyone who "+g.c+" "+g.b+".", a:false, why:"Reversal of the second premise."},
+     {t:"Anyone who does not "+g.c+" is not one of the "+g.a+".", a:true,  why:"Contrapositive of the chain."},
+     {t:"Some who "+g.b+" are not among the "+g.a+".", a:false, why:"Possible, but not established."},
+     {t:"No "+g.a+" "+g.c+".", a:false, why:"The exact opposite follows."}
    ]; } },
  { prem:function(g){ return "Every one of the "+g.a+" who "+g.b+" also "+g.c+". Some "+g.a+" do not "+g.c+"."; },
    sts:function(g){ return [
@@ -506,8 +651,20 @@ function(){
 
 /* ---------------- public API ---------------- */
 function tag(q){ q.raw=true; q.sk="gen:"+q.meta.k; return q; }
+
+/* Multi-step items are weighted up: the live test leans on them far more heavily
+   than a uniform draw across generators would produce. Weights are derived by
+   probing each generator once, so adding a generator needs no bookkeeping. */
+var MULTI=/^(tablepct|tablerate|twoyear|avgtarget)$/;
+var QR_POOL=[];
+QR_GEN.forEach(function(f,i){
+  var w=1;
+  try { if(MULTI.test(f().meta.k)) w=3; } catch(e){}
+  for(var j=0;j<w;j++) QR_POOL.push(i);
+});
+
 window.GEN = {
-  qr:function(){ return tag(pick(QR_GEN)()); },
+  qr:function(){ return tag(QR_GEN[pick(QR_POOL)]()); },
   dm:function(){ return tag(pick(DM_GEN)()); },
   batch:function(sec,n){
     var out=[]; for(var i=0;i<n;i++) out.push(window.GEN[sec]());

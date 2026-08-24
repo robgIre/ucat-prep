@@ -252,6 +252,8 @@ var GENLABEL={
   scale:"Scale and units", fx:"Currency", dose:"Drug dosing", conc:"Concentration",
   compound:"Compound growth", area:"Area and cost", pctofpct:"Percentage of a percentage",
   tabletotal:"Table totals", tablemax:"Comparing rows in a table",
+  tablepct:"Share of a total (multi-step)", tablerate:"Derived rates (multi-step)",
+  twoyear:"Change in a combined total (multi-step)", avgtarget:"Averages to a target (multi-step)",
   syll:"Syllogisms", venn2:"Venn, two sets", venn3:"Venn, three sets",
   probwo:"Probability without replacement", atleast:"At least one", dice:"Dice probability"
 };
@@ -531,7 +533,7 @@ function groupsFor(k){
   var g={};
   BANK[k].forEach(function(q){
     var key;
-    if(k==="vr")  key = q.kind==="tfct" ? "True/False/Can't Tell" : "Inference";
+    if(k==="vr")  key = q.syn ? "Multi-source" : (q.kind==="tfct" ? "True/False/Can't Tell" : "Inference");
     else if(k==="dm") key = {syllogism:"Syllogisms",puzzle:"Logic puzzles",argument:"Strongest argument",venn:"Venn / sets",prob:"Probability",interpret:"Interpreting data"}[q.sub];
     else if(k==="qr") key = q.topic;
     else key = q.fmt==="important" ? "Importance" : "Appropriateness";
@@ -729,13 +731,26 @@ var R=null;
 function fullSection(sec){
   if(sec==="qr") return GEN.batch("qr",36);
   if(sec==="dm") return GEN.batch("dm",35);
-  var key = sec==="vr" ? "p" : "s";
-  var want = sec==="vr" ? 44 : 69;
   var by={};
-  BANK[sec].forEach(function(q){ (by[q[key]]=by[q[key]]||[]).push(q); });
-  var groups=shuffle(Object.keys(by)), out=[];
-  for(var i=0;i<groups.length && out.length<want;i++) out=out.concat(by[groups[i]]);
-  return out.slice(0,want);
+  if(sec==="vr"){
+    // 11 passages x 4 questions, balanced between single-lookup and multi-source items
+    BANK.vr.forEach(function(q){ (by[q.p]=by[q.p]||[]).push(q); });
+    var ps=shuffle(Object.keys(by)).slice(0,11), out=[];
+    ps.forEach(function(pid){
+      var all=by[pid];
+      var syn=shuffle(all.filter(function(q){return q.syn;}));
+      var lk =shuffle(all.filter(function(q){return !q.syn;}));
+      var take=lk.slice(0,2).concat(syn.slice(0,2));
+      var spare=shuffle(all).filter(function(q){ return take.indexOf(q)<0; });
+      while(take.length<4 && spare.length) take.push(spare.shift());
+      out=out.concat(take.slice(0,4));
+    });
+    return out;
+  }
+  BANK.sjt.forEach(function(q){ (by[q.s]=by[q.s]||[]).push(q); });
+  var groups=shuffle(Object.keys(by)), o2=[];
+  for(var i=0;i<groups.length && o2.length<69;i++) o2=o2.concat(by[groups[i]]);
+  return o2.slice(0,69);
 }
 
 function startRun(sec,mode,subset){

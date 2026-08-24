@@ -30,11 +30,15 @@ Total 900–2700 plus an SJT band. No negative marking.
 
 - **Strategy library** — pace targets and halfway checkpoints per subtest, every question type
   with its specific method and its recurring traps, and the ten SJT principles.
-- **218 written questions** — 64 Verbal Reasoning across 16 passages, 30 Decision Making covering
+- **250 written questions** — 96 Verbal Reasoning across 16 passages, 30 Decision Making covering
   all six question types, 36 Quantitative Reasoning, 88 Situational Judgement across 22 scenarios.
   Every one has a worked explanation that teaches the method, not just the answer.
-- **Unlimited generated questions** — 18 Quantitative Reasoning and 6 Decision Making generators
+- **Multi-source Verbal Reasoning** — a third of VR questions cannot be answered from one sentence.
+  They require combining two separate statements, which is where the real test does its work.
+  Full sections are an even split of single-lookup and multi-source items.
+- **Unlimited generated questions** — 22 Quantitative Reasoning and 6 Decision Making generators
   build fresh items on demand with different numbers every time, so there is nothing to memorise.
+  Around 30% are multi-step, requiring a derived figure before the question can be answered.
   Distractors are drawn from real error modes and explanations quote the actual figures.
 - **Full-length sections for all four subtests** — the true question count and the true clock:
   VR 44Q/22min using 11 whole passages, DM 35Q/37min, QR 36Q/26min, SJT 69Q/26min.
@@ -72,6 +76,12 @@ The UCAT Consortium states that paid preparation courses are unnecessary and doe
 
 The estimated scaled score is a rough linear mapping from percentage correct. UCAT does not publish
 its scaling, so treat the number as a way of tracking movement over time, not as a predicted result.
+
+**On difficulty.** These questions are written to the official structural spec, but they have never
+been calibrated against real UCAT items, because the official questions are only viewable inside
+Pearson's test player. The likely direction of error is that they are slightly easier than the real
+thing. Compare your percentage here against the official question banks: if you score notably higher
+here, believe the official number.
 
 ## Files
 
