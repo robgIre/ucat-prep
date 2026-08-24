@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UCAT Prep</title>
+<meta name="theme-color" content="#0e1420">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{
+  --bg:#0e1420; --bg2:#151d2c; --card:#1a2435; --line:#28344a;
+  --tx:#e6ecf5; --dim:#94a3b8; --dimmer:#64748b;
+  --acc:#4da3ff; --acc2:#2b7fd4;
+  --ok:#3ecf8e; --bad:#ff6b6b; --warn:#ffc357; --flag:#c084fc;
+  --r:14px; --mx:1120px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--tx); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em}
+h1{font-size:1.6rem;letter-spacing:-.02em}
+h2{font-size:1.25rem;letter-spacing:-.01em}
+h3{font-size:1.02rem}
+p{margin:0 0 .8em}
+a{color:var(--acc)}
+b,strong{color:#fff;font-weight:650}
+.wrap{max-width:var(--mx);margin:0 auto;padding:0 16px}
+
+/* ---------- top bar ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(14,20,32,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:12px;height:56px}
+.logo{font-weight:750;letter-spacing:-.02em;font-size:1.05rem;white-space:nowrap}
+.logo span{color:var(--acc)}
+.cd{margin-left:auto;font-size:.8rem;color:var(--dim);text-align:right;line-height:1.3;white-space:nowrap}
+.cd b{display:block;font-size:1.05rem;color:var(--warn)}
+nav{display:flex;gap:4px;overflow-x:auto;padding:0 0 10px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{
+  background:transparent;border:1px solid transparent;color:var(--dim);font:inherit;font-size:.88rem;
+  padding:7px 13px;border-radius:99px;cursor:pointer;white-space:nowrap
+}
+nav button:hover{color:var(--tx);background:var(--bg2)}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#04101f;font-weight:640}
+
+/* ---------- generic ---------- */
+main{padding:24px 0 80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card+.card{margin-top:14px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.btn{
+  background:var(--acc);color:#04101f;border:0;border-radius:10px;padding:11px 18px;
+  font:inherit;font-weight:640;font-size:.94rem;cursor:pointer
+}
+.btn:hover{background:#69b3ff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.sec{background:var(--bg2);color:var(--tx);border:1px solid var(--line)}
+.btn.sec:hover{background:#1f2b3f}
+.btn.sm{padding:7px 13px;font-size:.85rem}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--dim)}
+.tiny{font-size:.82rem}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.74rem;font-weight:640;background:var(--bg2);color:var(--dim);border:1px solid var(--line)}
+.sep{height:1px;background:var(--line);margin:16px 0}
+ul.clean{margin:0;padding-left:20px}
+ul.clean li{margin-bottom:.45em}
+
+/* ---------- home ---------- */
+.hero{background:linear-gradient(150deg,#1b2b45,#151d2c 60%);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.big{font-size:2.6rem;font-weight:760;letter-spacing:-.03em;line-height:1;color:#fff}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;cursor:pointer;transition:.14s;text-align:left;width:100%;font:inherit;color:inherit}
+.tile:hover{border-color:var(--acc);transform:translateY(-2px)}
+.tile .tn{font-weight:680;margin-bottom:2px}
+.tile .ts{font-size:.82rem;color:var(--dim)}
+.tile .tv{font-size:1.5rem;font-weight:740;color:var(--acc);margin-top:8px;letter-spacing:-.02em}
+.bar{height:6px;background:var(--bg2);border-radius:99px;overflow:hidden;margin-top:9px}
+.bar i{display:block;height:100%;background:var(--acc);border-radius:99px}
+
+/* ---------- tables ---------- */
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-weight:620;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+td b{color:#fff}
+.dt{margin:12px 0;background:var(--bg2);border-radius:10px;overflow:hidden}
+.dt th{background:#101828}
+.setnote{background:var(--bg2);border-radius:10px;padding:12px 14px;margin:12px 0}
+
+/* ---------- runner ---------- */
+.exam{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column}
+.ebar{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg2);flex-wrap:wrap}
+.ebar .sect{font-weight:680;font-size:.95rem}
+.ebar .qn{color:var(--dim);font-size:.85rem}
+.timer{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:720;font-size:1.15rem;padding:4px 12px;border-radius:8px;background:#101828}
+.timer.warn{color:var(--warn);background:rgba(255,195,87,.13)}
+.timer.crit{color:var(--bad);background:rgba(255,107,107,.15)}
+.ebody{flex:1;overflow:auto;padding:18px 16px 12px}
+.ebody .inner{max-width:var(--mx);margin:0 auto}
+.split{display:grid;gap:18px;grid-template-columns:1fr 1fr;align-items:start}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.passage{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:.93rem;line-height:1.7;max-height:62vh;overflow:auto}
+.passage h4{color:var(--dim);text-transform:uppercase;font-size:.72rem;letter-spacing:.06em;margin-bottom:10px}
+.passage p{margin:0 0 .9em}
+.qstem{font-size:1.03rem;margin-bottom:14px}
+.opts{display:grid;gap:8px}
+.opt{
+  display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);
+  border-radius:10px;padding:12px 14px;cursor:pointer;font:inherit;color:inherit;text-align:left;width:100%;transition:.1s
+}
+.opt:hover{border-color:#3d4c68}
+.opt.sel{border-color:var(--acc);background:rgba(77,163,255,.1)}
+.opt .k{
+  flex:none;width:24px;height:24px;border-radius:6px;background:var(--bg2);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:.78rem;font-weight:700;color:var(--dim)
+}
+.opt.sel .k{background:var(--acc);color:#04101f;border-color:var(--acc)}
+.opt.right{border-color:var(--ok);background:rgba(62,207,142,.1)}
+.opt.right .k{background:var(--ok);color:#03291a;border-color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:rgba(255,107,107,.1)}
+.opt.wrong .k{background:var(--bad);color:#2b0505;border-color:var(--bad)}
+/* five-statement */
+.fst{display:grid;gap:9px}
+.fs{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px}
+.fs.right{border-color:var(--ok)} .fs.wrong{border-color:var(--bad)}
+.yn{display:flex;gap:5px;flex:none}
+.yn button{background:var(--bg2);border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:6px 14px;font:inherit;font-size:.84rem;font-weight:620;cursor:pointer}
+.yn button.on{background:var(--acc);border-color:var(--acc);color:#04101f}
+.yn button.on.no{background:var(--warn);border-color:var(--warn);color:#2b1c00}
+.efoot{border-top:1px solid var(--line);background:var(--bg2);padding:11px 16px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.efoot .sp{margin-left:auto}
+.fbk{border-radius:10px;padding:13px 15px;margin-top:14px;font-size:.92rem;border:1px solid}
+.fbk.ok{background:rgba(62,207,142,.09);border-color:rgba(62,207,142,.35)}
+.fbk.no{background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.35)}
+.fbk .vd{font-weight:700;margin-bottom:5px}
+kbd{background:var(--bg2);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:.78rem;font-family:ui-monospace,Menlo,monospace}
+
+/* navigator */
+.navg{position:fixed;inset:0;z-index:210;background:rgba(6,10,18,.8);display:grid;place-items:center;padding:20px}
+.navbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;max-width:560px;width:100%;max-height:80vh;overflow:auto}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:7px;margin:14px 0}
+.qgrid button{aspect-ratio:1;border-radius:8px;border:1.5px solid var(--line);background:var(--bg2);color:var(--dim);font:inherit;font-size:.85rem;font-weight:620;cursor:pointer}
+.qgrid button.ans{background:rgba(77,163,255,.18);border-color:var(--acc);color:var(--tx)}
+.qgrid button.flg{border-color:var(--flag);color:var(--flag)}
+.qgrid button.cur{outline:2px solid #fff;outline-offset:1px}
+
+/* calculator */
+.calc{position:fixed;right:18px;bottom:74px;z-index:220;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;width:232px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.calc .disp{background:#060b14;border:1px solid var(--line);border-radius:8px;padding:10px 12px;text-align:right;font-variant-numeric:tabular-nums;font-size:1.32rem;font-weight:640;margin-bottom:9px;overflow:hidden;min-height:48px;word-break:break-all}
+.ck{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ck button{background:var(--bg2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:11px 0;font:inherit;font-size:.94rem;cursor:pointer}
+.ck button:hover{background:#243044}
+.ck button.op{background:#233350;color:var(--acc)}
+.ck button.eq{background:var(--acc);color:#04101f;font-weight:700}
+.calc .ch{display:flex;align-items:center;margin-bottom:8px;font-size:.78rem;color:var(--dim)}
+.calc .ch button{margin-left:auto;background:none;border:0;color:var(--dim);font:inherit;font-size:1.15rem;cursor:pointer;line-height:1}
+
+/* results */
+.scorebig{font-size:3rem;font-weight:770;letter-spacing:-.03em;line-height:1;color:#fff}
+.rev{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px;background:var(--card)}
+.rev.k-ok{border-left:4px solid var(--ok)}
+.rev.k-no{border-left:4px solid var(--bad)}
+.rev.k-part{border-left:4px solid var(--warn)}
+.rev .rh{display:flex;gap:9px;align-items:center;margin-bottom:8px;font-size:.82rem;color:var(--dim)}
+
+/* plan */
+.day{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
+.day:last-child{border-bottom:0}
+.day input{width:19px;height:19px;flex:none;margin-top:3px;accent-color:var(--acc);cursor:pointer}
+.day.done .dtx{opacity:.45;text-decoration:line-through}
+.day .dd{font-size:.76rem;color:var(--dimmer);text-transform:uppercase;letter-spacing:.04em}
+.day.today{background:rgba(77,163,255,.07);border-radius:8px;padding:11px 10px;border-bottom:1px solid var(--line)}
+
+/* learn */
+.acc{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:10px;background:var(--card)}
+.acc>summary{padding:14px 16px;cursor:pointer;font-weight:640;list-style:none;display:flex;align-items:center;gap:10px}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary::after{content:"+";margin-left:auto;color:var(--dim);font-size:1.25rem;line-height:1}
+.acc[open]>summary::after{content:"\2013"}
+.acc .abody{padding:0 16px 16px}
+.trap{background:rgba(255,195,87,.08);border-left:3px solid var(--warn);border-radius:0 8px 8px 0;padding:10px 13px;margin:9px 0;font-size:.9rem}
+.prin{background:var(--bg2);border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.prin h4{margin:0 0 4px;font-size:.95rem;color:#fff}
+.prin p{margin:0;font-size:.9rem;color:var(--dim)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--card);border:1px solid var(--acc);border-radius:10px;padding:11px 18px;z-index:300;font-size:.9rem;box-shadow:0 10px 34px rgba(0,0,0,.5)}
+@media(max-width:600px){
+  .big{font-size:2.1rem}.scorebig{font-size:2.3rem}
+  .calc{right:8px;left:8px;width:auto;bottom:70px}
+  main{padding:18px 0 70px}
+}
+@media print{header,nav,.efoot{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hd">
+      <div class="logo">UCAT<span>.</span>prep</div>
+      <div class="cd" id="cd"></div>
+    </div>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<main><div class="wrap" id="view"></div></main>
+<div id="overlay"></div>
+
+<script src="bank-vr.js"></script>
+<script src="bank-dm.js"></script>
+<script src="bank-qr.js"></script>
+<script src="bank-sjt.js"></script>
+<script src="strategies.js"></script>
+<script>
+"use strict";
+
+/* ============================ state ============================ */
+var KEY="ucat.v1";
+var S=load();
+function load(){
+  try{var r=JSON.parse(localStorage.getItem(KEY)); if(r&&typeof r==="object") return fill(r);}catch(e){}
+  return fill({});
+}
+function fill(o){
+  o.runs   = o.runs   || [];   // {sec,mode,ts,marks,max,secs,detail:[{id,ok,part}]}
+  o.plan   = o.plan   || {};   // "w-d" -> true
+  o.seen   = o.seen   || {};   // qid -> {n,ok}
+  o.sprint = o.sprint || [];   // best sprint scores
+  return o;
+}
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+
+var BANK={vr:BANK_VR,dm:BANK_DM,qr:BANK_QR,sjt:BANK_SJT};
+var SEC={vr:"Verbal Reasoning",dm:"Decision Making",qr:"Quantitative Reasoning",sjt:"Situational Judgement"};
+var PERQ={}; FORMAT.sections.forEach(function(s){ PERQ[s.key]=s.mins*60/s.q; });
+
+/* ============================ helpers ============================ */
+function $(s,r){return (r||document).querySelector(s);}
+function el(t,c,h){var e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function pad(n){return n<10?"0"+n:""+n;}
+function mmss(s){s=Math.max(0,Math.round(s));return pad(Math.floor(s/60))+":"+pad(s%60);}
+function pct(a,b){return b?Math.round(a/b*100):0;}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function daysTo(d){
+  var t=new Date(); t.setHours(0,0,0,0);
+  var x=new Date(d+"T00:00:00");
+  return Math.round((x-t)/86400000);
+}
+function toast(m){
+  var t=el("div","toast",esc(m)); document.body.appendChild(t);
+  setTimeout(function(){t.remove();},2200);
+}
+/* estimated scaled score. Approximation only - real UCAT scaling is not published. */
+function scaled(p){ return Math.max(300,Math.min(900,Math.round((300+600*p)/10)*10)); }
+function decileOf(sec,score){
+  var d=FORMAT.deciles[sec]; if(!d) return null;
+  var n=0; for(var i=0;i<d.length;i++){ if(score>=d[i]) n=i+1; }
+  return n;
+}
+
+/* ============================ routing ============================ */
+var VIEWS=[["home","Home"],["plan","4-week plan"],["learn","Strategy"],["drill","Drill"],["timed","Timed sections"],["sprint","Maths sprint"],["stats","Progress"],["format","Format"]];
+var cur="home";
+function go(v){ cur=v; render(); window.scrollTo(0,0); }
+function nav(){
+  var n=$("#nav"); n.innerHTML="";
+  VIEWS.forEach(function(v){
+    var b=el("button",v[0]===cur?"on":"",v[1]);
+    b.onclick=function(){go(v[0]);};
+    n.appendChild(b);
+  });
+}
+function countdown(){
+  var d=daysTo(FORMAT.examDate);
+  var c=$("#cd");
+  if(d>1) c.innerHTML="<b>"+d+" days</b>until the UCAT";
+  else if(d===1) c.innerHTML="<b>Tomorrow</b>UCAT day";
+  else if(d===0) c.innerHTML="<b>Today</b>Good luck";
+  else c.innerHTML="<b>Done</b>exam has passed";
+}
+
+/* ============================ views ============================ */
+function render(){
+  nav(); countdown();
+  var v=$("#view"); v.innerHTML="";
+  ({home:vHome,plan:vPlan,learn:vLearn,drill:vDrill,timed:vTimed,sprint:vSprint,stats:vStats,format:vFormat}[cur])(v);
+}
+
+/* ---------- home ---------- */
+function vHome(v){
+  var d=daysTo(FORMAT.examDate);
+  var h=el("div","hero");
+  var when=new Date(FORMAT.examDate+"T00:00:00")
+    .toLocaleDateString("en-IE",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  h.innerHTML=
+    '<div class="tiny muted" style="text-transform:uppercase;letter-spacing:.08em">Exam day</div>'+
+    '<div class="big">'+(d>0?d+(d===1?" day":" days"):"Today")+'</div>'+
+    '<div class="muted" style="margin-top:6px">'+when+'</div>'+
+    '<div class="sep"></div>'+
+    '<div class="tiny muted">The exam is 4 subtests, just under 2 hours, scored 900&ndash;2700 plus an SJT band. '+
+    'No negative marking, so never leave a blank.</div>';
+  v.appendChild(h);
+
+  // today's plan item
+  var t=todayTask();
+  if(t){
+    var c=el("div","card");
+    c.style.marginTop="14px";
+    c.innerHTML='<div class="tiny muted" style="text-transform:uppercase;letter-spacing:.08em">Today &middot; week '+t.w+'</div>'+
+      '<h3 style="margin:6px 0 4px">'+esc(t.task)+'</h3>'+
+      '<div class="tiny muted">Suggested time: '+esc(t.time)+'</div>';
+    var b=el("button","btn sm",t.done?"Done ✓":"Mark done");
+    b.style.marginTop="12px";
+    if(t.done) b.className="btn sm sec";
+    b.onclick=function(){ S.plan[t.k]=!S.plan[t.k]; save(); render(); };
+    c.appendChild(b);
+    v.appendChild(c);
+  }
+
+  var g=el("div","grid g2"); g.style.marginTop="14px";
+  ["vr","dm","qr","sjt"].forEach(function(k){
+    var st=secStats(k);
+    var b=el("button","tile");
+    b.innerHTML='<div class="tn">'+SEC[k]+'</div>'+
+      '<div class="ts">'+BANK[k].length+' practice questions &middot; '+PERQ[k].toFixed(0)+'s per question in the real test</div>'+
+      '<div class="tv">'+(st.max?st.pc+"%":"–")+'</div>'+
+      '<div class="ts">'+(st.max?st.marks+" of "+st.max+" marks across "+st.runs+" run"+(st.runs===1?"":"s"):"not attempted yet")+'</div>'+
+      '<div class="bar"><i style="width:'+(st.max?st.pc:0)+'%"></i></div>';
+    b.onclick=function(){ startRun(k,"drill"); };
+    g.appendChild(b);
+  });
+  v.appendChild(g);
+
+  var q=el("div","card"); q.style.marginTop="14px";
+  q.innerHTML='<h3>Start here</h3><p class="tiny muted">If you only do three things: learn the pace, learn the question types, and do the four official mock tests on ucat.ac.uk. They are free and they are the closest thing to the real exam that exists.</p>';
+  var r=el("div","row");
+  [["Read the strategy notes","learn"],["See the 4-week plan","plan"],["Maths sprint","sprint"]].forEach(function(x){
+    var b=el("button","btn sec sm",x[1]==="learn"?x[0]:x[0]);
+    b.onclick=function(){go(x[1]);}; r.appendChild(b);
+  });
+  q.appendChild(r);
+  v.appendChild(q);
+
+  var o=el("div","card"); o.style.marginTop="14px";
+  o.innerHTML='<h3>Official free resources</h3>'+
+    '<ul class="clean tiny">'+
+    '<li><a href="https://www.ucat.ac.uk/prepare/practice-tests/" target="_blank" rel="noopener">Four full practice tests</a> &mdash; the single most valuable thing available. Save them for weeks 3 and 4.</li>'+
+    '<li><a href="https://www.ucat.ac.uk/prepare/question-tutorials/" target="_blank" rel="noopener">Question tutorials</a> &mdash; official strategy for each subtest.</li>'+
+    '<li><a href="https://www.ucat.ac.uk/prepare/test-tools/" target="_blank" rel="noopener">Tour tutorial and test tools</a> &mdash; learn the calculator, flag and keyboard shortcuts before test day.</li>'+
+    '</ul>'+
+    '<p class="tiny muted" style="margin-top:8px">The UCAT Consortium does not endorse paid preparation courses and states they are unnecessary.</p>';
+  v.appendChild(o);
+}
+
+function secStats(k){
+  var runs=S.runs.filter(function(r){return r.sec===k;});
+  var marks=0,max=0;
+  runs.forEach(function(r){marks+=r.marks;max+=r.max;});
+  return {runs:runs.length,marks:marks,max:max,pc:pct(marks,max)};
+}
+
+function todayTask(){
+  var d=daysTo(FORMAT.examDate);
+  if(d<0||d>28) return null;
+  var idx=28-d;                       // 0..28
+  if(idx>27) idx=27;
+  var w=Math.floor(idx/7), dd=idx%7;
+  var wk=PLAN[w]; if(!wk) return null;
+  var t=wk.days[dd];
+  var k=(w+1)+"-"+dd;
+  return {w:w+1,d:dd,task:t[0],time:t[1],k:k,done:!!S.plan[k]};
+}
+
+/* ---------- plan ---------- */
+function vPlan(v){
+  var d=daysTo(FORMAT.examDate);
+  var c=el("div","card");
+  c.innerHTML='<h2>Four weeks to '+new Date(FORMAT.examDate+"T00:00:00").toLocaleDateString("en-IE",{day:"numeric",month:"long"})+'</h2>'+
+    '<p class="tiny muted">The plan assumes roughly 45 minutes a day, more on mock days. '+
+    'Weeks 3 and 4 are built around the four official practice tests &mdash; those matter more than anything in this app. '+
+    'The last two days are deliberately light: cramming immediately before an aptitude test lowers scores.</p>';
+  v.appendChild(c);
+
+  var done=0,total=0;
+  PLAN.forEach(function(wk,wi){
+    var card=el("div","card");
+    var head='<h3>'+esc(wk.title)+'</h3><p class="tiny muted">'+esc(wk.aim)+'</p>';
+    card.innerHTML=head;
+    wk.days.forEach(function(t,di){
+      var idx=wi*7+di;
+      var dayNo=28-idx;                       // days remaining at that point
+      var key=(wi+1)+"-"+di;
+      total++; if(S.plan[key]) done++;
+      var row=el("div","day"+(S.plan[key]?" done":"")+(dayNo===d?" today":""));
+      var dt=new Date(FORMAT.examDate+"T00:00:00"); dt.setDate(dt.getDate()-dayNo);
+      var cb=el("input"); cb.type="checkbox"; cb.checked=!!S.plan[key];
+      cb.onchange=function(){ S.plan[key]=cb.checked; save(); render(); };
+      var tx=el("div","dtx");
+      tx.innerHTML='<div class="dd">'+dt.toLocaleDateString("en-IE",{weekday:"short",day:"numeric",month:"short"})+
+        (dayNo===d?' &middot; <span style="color:var(--acc)">today</span>':'')+'</div>'+
+        '<div>'+esc(t[0])+'</div>'+
+        '<div class="tiny muted">'+esc(t[1])+'</div>';
+      row.appendChild(cb); row.appendChild(tx);
+      card.appendChild(row);
+    });
+    v.appendChild(card);
+  });
+
+  var pr=el("div","card");
+  pr.innerHTML='<h3>Plan progress</h3><div class="bar" style="height:9px"><i style="width:'+pct(done,total)+'%"></i></div>'+
+    '<div class="tiny muted" style="margin-top:7px">'+done+' of '+total+' sessions done</div>';
+  v.appendChild(pr);
+
+  var td=el("div","card");
+  td.innerHTML='<h3>Test day</h3><ul class="clean tiny">'+TEST_DAY.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>';
+  v.appendChild(td);
+}
+
+/* ---------- learn ---------- */
+function vLearn(v){
+  var g=STRATEGY.general;
+  var c=el("div","card");
+  c.innerHTML='<h2>'+esc(g.title)+'</h2>';
+  g.points.forEach(function(p){
+    c.appendChild(el("div","prin",'<h4>'+esc(p.h)+'</h4><p>'+esc(p.p)+'</p>'));
+  });
+  v.appendChild(c);
+
+  ["vr","dm","qr","sjt"].forEach(function(k){
+    var s=STRATEGY[k];
+    var d=el("details","acc");
+    var sm=el("summary",null,esc(s.name)+' <span class="pill">'+s.q+'Q / '+s.mins+' min</span>');
+    d.appendChild(sm);
+    var b=el("div","abody");
+    b.innerHTML='<div class="prin"><h4>Pace</h4><p>'+esc(s.pace)+'</p></div>'+
+      '<div class="prin"><h4>Halfway checkpoint</h4><p>'+esc(s.checkpoint)+'</p></div>';
+
+    if(s.approach){
+      b.appendChild(el("h4",null,"How to approach it"));
+      b.appendChild(el("ul","clean",s.approach.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")));
+    }
+    if(s.types){
+      b.appendChild(el("h4",null,"Question types"));
+      s.types.forEach(function(t){
+        var box=el("div","prin");
+        box.innerHTML='<h4>'+esc(t.n)+'</h4><p>'+esc(t.how)+'</p>';
+        (t.traps||[]).forEach(function(tr){ box.appendChild(el("div","trap",esc(tr))); });
+        b.appendChild(box);
+      });
+    }
+    if(s.mental){
+      b.appendChild(el("h4",null,"Mental arithmetic to have automatic"));
+      b.appendChild(el("ul","clean",s.mental.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")));
+    }
+    if(s.principles){
+      b.appendChild(el("h4",null,"The ten principles"));
+      s.principles.forEach(function(p){ b.appendChild(el("div","prin",'<h4>'+esc(p.h)+'</h4><p>'+esc(p.p)+'</p>')); });
+      b.appendChild(el("h4",null,"What the four appropriateness ratings mean"));
+      b.appendChild(el("ul","clean",s.scale.map(function(x){return "<li><b>"+esc(x.l)+"</b> &mdash; "+esc(x.d)+"</li>";}).join("")));
+      b.appendChild(el("h4",null,"What the four importance ratings mean"));
+      b.appendChild(el("ul","clean",s.importanceScale.map(function(x){return "<li><b>"+esc(x.l)+"</b> &mdash; "+esc(x.d)+"</li>";}).join("")));
+    }
+    d.appendChild(b);
+    v.appendChild(d);
+  });
+}
+
+/* ---------- drill picker ---------- */
+function vDrill(v){
+  var c=el("div","card");
+  c.innerHTML='<h2>Drill</h2><p class="tiny muted">Untimed, with the explanation shown after every question. This is where the learning happens &mdash; read the explanation even when you get it right, because the reasoning matters more than the answer.</p>';
+  v.appendChild(c);
+
+  ["vr","dm","qr","sjt"].forEach(function(k){
+    var card=el("div","card");
+    card.innerHTML='<h3>'+SEC[k]+' <span class="pill">'+BANK[k].length+' questions</span></h3>';
+    var r=el("div","row");
+    var all=el("button","btn sm","All "+BANK[k].length);
+    all.onclick=function(){ startRun(k,"drill"); };
+    r.appendChild(all);
+    var groups=groupsFor(k);
+    Object.keys(groups).forEach(function(g){
+      var b=el("button","btn sec sm",g+" ("+groups[g].length+")");
+      b.onclick=function(){ startRun(k,"drill",groups[g]); };
+      r.appendChild(b);
+    });
+    card.appendChild(r);
+    v.appendChild(card);
+  });
+}
+function groupsFor(k){
+  var g={};
+  BANK[k].forEach(function(q){
+    var key;
+    if(k==="vr")  key = q.kind==="tfct" ? "True/False/Can't Tell" : "Inference";
+    else if(k==="dm") key = {syllogism:"Syllogisms",puzzle:"Logic puzzles",argument:"Strongest argument",venn:"Venn / sets",prob:"Probability",interpret:"Interpreting data"}[q.sub];
+    else if(k==="qr") key = q.topic;
+    else key = q.fmt==="important" ? "Importance" : "Appropriateness";
+    (g[key]=g[key]||[]).push(q);
+  });
+  return g;
+}
+
+/* ---------- timed picker ---------- */
+function vTimed(v){
+  var c=el("div","card");
+  c.innerHTML='<h2>Timed sections</h2>'+
+    '<p class="tiny muted">Exam conditions: a countdown, flag and navigator, no feedback until the end. '+
+    'The clock is set at the real per-question rate for each subtest, so the pressure matches the exam even though these sections are shorter than the live ones.</p>'+
+    '<p class="tiny muted">Keyboard: <kbd>Alt</kbd>+<kbd>N</kbd> next &middot; <kbd>Alt</kbd>+<kbd>P</kbd> previous &middot; <kbd>Alt</kbd>+<kbd>F</kbd> flag. Use them &mdash; they are the real shortcuts.</p>';
+  v.appendChild(c);
+
+  var g=el("div","grid g2");
+  ["vr","dm","qr","sjt"].forEach(function(k){
+    var n=BANK[k].length, secs=Math.round(n*PERQ[k]);
+    var real=FORMAT.sections.filter(function(s){return s.key===k;})[0];
+    var b=el("button","tile");
+    b.innerHTML='<div class="tn">'+SEC[k]+'</div>'+
+      '<div class="ts">'+n+' questions in '+mmss(secs)+'</div>'+
+      '<div class="tv">'+PERQ[k].toFixed(0)+'s</div>'+
+      '<div class="ts">per question &mdash; real test is '+real.q+'Q in '+real.mins+' min</div>';
+    b.onclick=function(){ startRun(k,"timed"); };
+    g.appendChild(b);
+  });
+  v.appendChild(g);
+
+  var w=el("div","card");
+  w.innerHTML='<h3>Where the full mocks are</h3><p class="tiny muted">This app cannot replace a full-length mock. There are four official ones, free, and they are built by the people who write the exam: '+
+    '<a href="https://www.ucat.ac.uk/prepare/practice-tests/" target="_blank" rel="noopener">ucat.ac.uk practice tests</a>. Do them in weeks 3 and 4, one sitting each, no interruptions.</p>';
+  v.appendChild(w);
+}
+
+/* ---------- format ---------- */
+function vFormat(v){
+  var c=el("div","card");
+  var rows=FORMAT.sections.map(function(s){
+    return "<tr><td><b>"+s.name+"</b></td><td>"+s.q+"</td><td>"+s.instr+"</td><td>"+s.mins+" min</td><td>"+
+      (s.mins*60/s.q).toFixed(0)+"s</td><td>"+s.scale+"</td></tr>";
+  }).join("");
+  c.innerHTML='<h2>The test, exactly</h2>'+
+    '<table><thead><tr><th>Subtest</th><th>Qs</th><th>Instructions</th><th>Time</th><th>Per Q</th><th>Scoring</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+    '<p class="tiny muted" style="margin-top:12px">Four subtests, each separately timed, each preceded by a timed instruction screen. Just under two hours in total. '+
+    '<b>Abstract Reasoning was removed in 2025</b> &mdash; any resource that still includes it is out of date.</p>';
+  v.appendChild(c);
+
+  var m=el("div","card");
+  m.innerHTML='<h3>Marking</h3><ul class="clean tiny">'+
+    '<li>No negative marking. A wrong answer scores the same as a blank, so guess everything.</li>'+
+    '<li>Verbal Reasoning and Quantitative Reasoning: 1 mark per question.</li>'+
+    '<li>Decision Making: single-answer questions 1 mark; the five-statement questions are worth <b>2 marks</b>, with 1 mark for a partially correct response.</li>'+
+    '<li>Situational Judgement: full marks for the exact answer, partial marks for being close. Reported as a band, not a score.</li>'+
+    '<li>Raw marks are converted to a scaled score of 300&ndash;900 per cognitive subtest. Total is 900&ndash;2700.</li>'+
+    '</ul>';
+  v.appendChild(m);
+
+  var d=el("div","card");
+  var dec=FORMAT.deciles;
+  var tr="";
+  for(var i=0;i<9;i++){
+    tr+="<tr><td><b>"+(i+1)+(["st","nd","rd","th","th","th","th","th","th"][i])+"</b></td><td>"+dec.total[i]+"</td><td>"+dec.vr[i]+"</td><td>"+dec.dm[i]+"</td><td>"+dec.qr[i]+"</td></tr>";
+  }
+  d.innerHTML='<h3>What the scores mean (2025 candidates)</h3>'+
+    '<table><thead><tr><th>Decile</th><th>Total</th><th>VR</th><th>DM</th><th>QR</th></tr></thead><tbody>'+tr+'</tbody></table>'+
+    '<p class="tiny muted" style="margin-top:10px">Mean total in 2025 was <b>'+FORMAT.meanTotal2025+'</b> across 41,354 tests (VR '+
+    FORMAT.sections[0].mean2025+', DM '+FORMAT.sections[1].mean2025+', QR '+FORMAT.sections[2].mean2025+'). '+
+    'The 9th decile &mdash; the top 10% &mdash; started at 2220. SJT bands: '+
+    FORMAT.sjtBands2025[1]+'% band 1, '+FORMAT.sjtBands2025[2]+'% band 2, '+FORMAT.sjtBands2025[3]+'% band 3, '+FORMAT.sjtBands2025[4]+'% band 4.</p>'+
+    '<p class="tiny muted">2026 figures are published in mid-September and will shift slightly, but not by much.</p>';
+  v.appendChild(d);
+
+  var k=el("div","card");
+  k.innerHTML='<h3>Key dates, 2026 cycle</h3><ul class="clean tiny">'+
+    '<li>Booking deadline: <b>16 September 2026</b>, 15:00 UK time.</li>'+
+    '<li>Last test day: <b>24 September 2026</b>.</li>'+
+    '<li>UCAS deadline: <b>15 October 2026</b>.</li>'+
+    '<li>Results delivered to universities: early November.</li>'+
+    '</ul>';
+  v.appendChild(k);
+}
+
+/* ---------- stats ---------- */
+function vStats(v){
+  if(!S.runs.length){
+    v.appendChild(el("div","card",'<h2>Progress</h2><p class="tiny muted">Nothing recorded yet. Do a drill or a timed section and the results land here.</p>'));
+    return;
+  }
+  var tot=el("div","grid g4");
+  var est=0,cnt=0;
+  ["vr","dm","qr"].forEach(function(k){
+    var st=secStats(k); if(!st.max) return;
+    var sc=scaled(st.marks/st.max); est+=sc; cnt++;
+  });
+  var sjt=secStats("sjt");
+  [["Sections attempted",["vr","dm","qr","sjt"].filter(function(k){return secStats(k).max;}).length+" of 4"],
+   ["Questions answered",S.runs.reduce(function(a,r){return a+r.detail.length;},0)],
+   ["Estimated cognitive total",cnt===3?est:(cnt?"~"+est+" ("+cnt+"/3)":"–")],
+   ["SJT accuracy",sjt.max?sjt.pc+"%":"–"]
+  ].forEach(function(x){
+    tot.appendChild(el("div","card",'<div class="tiny muted">'+x[0]+'</div><div style="font-size:1.5rem;font-weight:730;letter-spacing:-.02em;margin-top:4px">'+x[1]+'</div>'));
+  });
+  v.appendChild(tot);
+
+  if(cnt===3){
+    var dq=decileOf("total",est);
+    var w=el("div","card");
+    w.innerHTML='<h3>Estimated position</h3>'+
+      '<p class="tiny muted">Based on your accuracy so far, an estimated cognitive total of <b>'+est+'</b>'+
+      (dq?', which would sit around the <b>'+dq+(["st","nd","rd","th","th","th","th","th","th"][dq-1])+' decile</b> against 2025 candidates':'')+
+      '. The 2025 mean was '+FORMAT.meanTotal2025+'.</p>'+
+      '<p class="tiny muted"><b>Treat this loosely.</b> UCAT does not publish its scaling, so this is a rough linear estimate from percentage correct, not a predicted score. Its value is in tracking movement over four weeks, not in the number itself.</p>';
+    v.appendChild(w);
+  }
+
+  ["vr","dm","qr","sjt"].forEach(function(k){
+    var st=secStats(k); if(!st.max) return;
+    var card=el("div","card");
+    var sc=k==="sjt"?null:scaled(st.marks/st.max);
+    card.innerHTML='<h3>'+SEC[k]+'</h3>'+
+      '<div class="row tiny muted"><span>'+st.marks+' / '+st.max+' marks ('+st.pc+'%)</span>'+
+      (sc?'<span class="pill">est. '+sc+'</span>':'')+
+      '<span class="pill">'+st.runs+' run'+(st.runs===1?'':'s')+'</span></div>'+
+      '<div class="bar" style="height:8px;margin-top:10px"><i style="width:'+st.pc+'%"></i></div>';
+    // per-type
+    var groups=groupsFor(k), rows="";
+    Object.keys(groups).forEach(function(g){
+      var n=0,ok=0;
+      groups[g].forEach(function(q){ var s=S.seen[q.id]; if(s){n+=s.n; ok+=s.ok;} });
+      if(!n) return;
+      var p=pct(ok,n);
+      rows+='<tr><td>'+esc(g)+'</td><td>'+ok+'/'+n+'</td><td><div class="bar" style="margin:0"><i style="width:'+p+'%;background:'+(p>=75?"var(--ok)":p>=50?"var(--warn)":"var(--bad)")+'"></i></div></td><td style="text-align:right"><b>'+p+'%</b></td></tr>';
+    });
+    if(rows) card.innerHTML+='<table style="margin-top:14px"><thead><tr><th>Question type</th><th>Correct</th><th style="width:38%">&nbsp;</th><th style="text-align:right">Rate</th></tr></thead><tbody>'+rows+'</tbody></table>';
+    v.appendChild(card);
+  });
+
+  if(S.sprint.length){
+    var b=Math.max.apply(null,S.sprint);
+    v.appendChild(el("div","card",'<h3>Mental maths sprint</h3><p class="tiny muted">Best: <b>'+b+'</b> correct in 60 seconds &middot; '+S.sprint.length+' attempts</p>'));
+  }
+
+  var hist=el("div","card");
+  hist.innerHTML='<h3>History</h3>';
+  var rows2=S.runs.slice().reverse().slice(0,25).map(function(r){
+    return '<tr><td>'+new Date(r.ts).toLocaleDateString("en-IE",{day:"numeric",month:"short"})+'</td><td>'+SEC[r.sec]+'</td><td>'+
+      (r.mode==="timed"?'<span class="pill">timed</span>':'<span class="pill">drill</span>')+'</td><td>'+r.marks+'/'+r.max+'</td><td><b>'+pct(r.marks,r.max)+'%</b></td></tr>';
+  }).join("");
+  hist.innerHTML+='<table><thead><tr><th>Date</th><th>Section</th><th>Mode</th><th>Marks</th><th>Rate</th></tr></thead><tbody>'+rows2+'</tbody></table>';
+  var rb=el("button","btn sec sm","Reset all progress"); rb.style.marginTop="14px";
+  rb.onclick=function(){ if(confirm("Delete all saved results and plan progress?")){ localStorage.removeItem(KEY); S=load(); render(); } };
+  hist.appendChild(rb);
+  v.appendChild(hist);
+}
+
+/* ============================ runner ============================ */
+var R=null;
+function startRun(sec,mode,subset){
+  var qs=shuffle(subset||BANK[sec]);
+  R={ sec:sec, mode:mode, qs:qs, i:0, ans:{}, flags:{}, t0:Date.now(),
+      left: mode==="timed" ? Math.round(qs.length*PERQ[sec]) : null, timer:null, revealed:{} };
+  document.body.style.overflow="hidden";
+  drawExam();
+  if(mode==="timed"){
+    R.timer=setInterval(function(){
+      R.left--;
+      var t=$("#timer");
+      if(t){ t.textContent=mmss(R.left); t.className="timer"+(R.left<=60?" crit":R.left<=300?" warn":""); }
+      if(R.left<=0){ clearInterval(R.timer); finishRun(true); }
+    },1000);
+  }
+  document.addEventListener("keydown",keys);
+}
+function keys(e){
+  if(!R) return;
+  if(e.altKey && (e.key==="n"||e.key==="N")){ e.preventDefault(); next(); }
+  if(e.altKey && (e.key==="p"||e.key==="P")){ e.preventDefault(); prev(); }
+  if(e.altKey && (e.key==="f"||e.key==="F")){ e.preventDefault(); toggleFlag(); }
+}
+function endRunUI(){
+  if(R&&R.timer) clearInterval(R.timer);
+  document.removeEventListener("keydown",keys);
+  document.body.style.overflow="";
+  $("#overlay").innerHTML="";
+}
+
+function drawExam(){
+  var o=$("#overlay");
+  var q=R.qs[R.i];
+  var wrap=el("div","exam");
+
+  // bar
+  var bar=el("div","ebar");
+  bar.innerHTML='<div class="sect">'+SEC[R.sec]+'</div><div class="qn">Question '+(R.i+1)+' of '+R.qs.length+'</div>';
+  if(R.mode==="timed"){
+    var t=el("div","timer"+(R.left<=60?" crit":R.left<=300?" warn":""),mmss(R.left));
+    t.id="timer"; bar.appendChild(t);
+  } else {
+    var sp=el("div","timer"); sp.style.marginLeft="auto"; sp.style.background="transparent"; sp.style.fontSize=".85rem";
+    sp.style.color="var(--dim)"; sp.style.fontWeight="500"; sp.textContent="Untimed drill";
+    bar.appendChild(sp);
+  }
+  wrap.appendChild(bar);
+
+  // body
+  var body=el("div","ebody");
+  var inner=el("div","inner");
+  inner.appendChild(renderQ(q));
+  body.appendChild(inner);
+  wrap.appendChild(body);
+
+  // foot
+  var foot=el("div","efoot");
+  var bp=el("button","btn sec sm","← Previous"); bp.onclick=prev; bp.disabled=R.i===0;
+  var bf=el("button","btn sec sm",(R.flags[q.id]?"⚑ Flagged":"⚐ Flag"));
+  if(R.flags[q.id]) bf.style.borderColor="var(--flag)", bf.style.color="var(--flag)";
+  bf.onclick=toggleFlag;
+  var bn=el("button","btn sec sm","Navigator"); bn.onclick=showNav;
+  foot.appendChild(bp); foot.appendChild(bf); foot.appendChild(bn);
+
+  if(R.sec==="dm"||R.sec==="qr"){
+    var bc=el("button","btn sec sm","Calculator"); bc.onclick=toggleCalc; foot.appendChild(bc);
+  }
+  var sp2=el("div","sp"); foot.appendChild(sp2);
+
+  if(R.mode==="drill" && !R.revealed[q.id]){
+    var bch=el("button","btn sm","Check answer");
+    bch.onclick=function(){
+      if(R.ans[q.id]===undefined){ toast("Choose an answer first"); return; }
+      R.revealed[q.id]=true; recordSeen(q); drawExam();
+    };
+    foot.appendChild(bch);
+  } else {
+    var bnx=el("button","btn sm", R.i===R.qs.length-1 ? "Finish" : "Next →");
+    bnx.onclick=function(){ R.i===R.qs.length-1 ? finishRun(false) : next(); };
+    foot.appendChild(bnx);
+  }
+  var bq=el("button","btn sec sm","End"); bq.onclick=function(){
+    if(confirm("End this section and see results?")) finishRun(false);
+  };
+  foot.appendChild(bq);
+  wrap.appendChild(foot);
+
+  o.innerHTML=""; o.appendChild(wrap);
+  if(calcOpen) drawCalc();
+}
+
+function renderQ(q){
+  var box=el("div");
+  var reveal = R.mode==="drill" && R.revealed[q.id];
+
+  if(R.sec==="vr"){
+    var sp=el("div","split");
+    var p=VR_PASSAGES[q.p];
+    sp.appendChild(el("div","passage",'<h4>'+esc(p.title)+'</h4>'+
+      p.text.split("\n\n").map(function(x){return "<p>"+esc(x.trim())+"</p>";}).join("")));
+    var right=el("div");
+    if(q.kind==="tfct"){
+      right.appendChild(el("div","qstem",'<span class="pill">True / False / Can\'t Tell</span><div style="margin-top:9px">'+esc(q.stem)+'</div>'));
+      right.appendChild(optionList(q,["True","False","Can't Tell"],reveal));
+    } else {
+      right.appendChild(el("div","qstem",esc(q.stem)));
+      right.appendChild(optionList(q,q.opts,reveal));
+    }
+    if(reveal) right.appendChild(feedback(q));
+    sp.appendChild(right);
+    box.appendChild(sp);
+    return box;
+  }
+
+  if(R.sec==="qr"){
+    if(q.set){
+      var s=QR_SETS[q.set];
+      box.appendChild(el("div","setnote",'<b>'+esc(s.title)+'</b>'+s.html));
+    }
+    box.appendChild(el("div","qstem",'<span class="pill">'+esc(q.topic)+'</span><div style="margin-top:9px">'+q.stem+'</div>'));
+    box.appendChild(optionList(q,q.opts,reveal));
+    if(reveal) box.appendChild(feedback(q));
+    return box;
+  }
+
+  if(R.sec==="sjt"){
+    var sc=SJT_SCENARIOS[q.s];
+    box.appendChild(el("div","setnote",esc(sc.text)));
+    var lead = q.fmt==="important" ? (sc.ask||"How important is the following consideration?")
+                                   : "How appropriate is the following response?";
+    box.appendChild(el("div","qstem",'<div class="tiny muted" style="margin-bottom:8px">'+esc(lead)+'</div>'+esc(q.stem)));
+    box.appendChild(optionList(q,SJT_SCALES[q.fmt],reveal));
+    if(reveal) box.appendChild(feedback(q));
+    return box;
+  }
+
+  // DM
+  var lbl={syllogism:"Syllogism",puzzle:"Logic puzzle",argument:"Strongest argument",venn:"Venn / sets",prob:"Probability",interpret:"Interpreting data"}[q.sub];
+  if(q.kind==="five"){
+    box.appendChild(el("div","qstem",'<span class="pill">'+lbl+'</span> <span class="pill">2 marks</span>'+
+      '<div style="margin-top:10px">'+esc(q.stem)+'</div>'+
+      '<div class="tiny muted" style="margin-top:8px">'+esc(q.ask)+' Answer all five &mdash; a partially correct response still scores 1 mark.</div>'));
+    var list=el("div","fst");
+    var cur=R.ans[q.id]||{};
+    q.sts.forEach(function(st,i){
+      var ok = reveal ? (cur[i]===st.a) : null;
+      var row=el("div","fs"+(reveal?(ok?" right":" wrong"):""));
+      row.appendChild(el("div",null,esc(st.t)+(reveal?'<div class="tiny muted" style="margin-top:5px">'+esc(st.why)+'</div>':'')));
+      var yn=el("div","yn");
+      [["Yes",true],["No",false]].forEach(function(o){
+        var b=el("button",(cur[i]===o[1]?"on"+(o[1]?"":" no"):""),o[0]);
+        if(reveal){ b.disabled=true; if(st.a===o[1]) b.style.outline="2px solid var(--ok)"; }
+        b.onclick=function(){
+          var a=R.ans[q.id]||{}; a[i]=o[1]; R.ans[q.id]=a; drawExam();
+        };
+        yn.appendChild(b);
+      });
+      row.appendChild(yn);
+      list.appendChild(row);
+    });
+    box.appendChild(list);
+    if(reveal) box.appendChild(feedback(q,true));
+    return box;
+  }
+  box.appendChild(el("div","qstem",'<span class="pill">'+lbl+'</span><div style="margin-top:9px">'+esc(q.stem)+'</div>'));
+  box.appendChild(optionList(q,q.opts,reveal));
+  if(reveal) box.appendChild(feedback(q));
+  return box;
+}
+
+function optionList(q,opts,reveal){
+  var box=el("div","opts");
+  opts.forEach(function(o,i){
+    var c="opt";
+    if(R.ans[q.id]===i) c+=" sel";
+    if(reveal){ if(i===q.ans) c+=" right"; else if(R.ans[q.id]===i) c+=" wrong"; }
+    var b=el("button",c,'<span class="k">'+"ABCDE"[i]+'</span><span>'+o+'</span>');
+    if(reveal) b.disabled=true;
+    b.onclick=function(){ R.ans[q.id]=i; drawExam(); };
+    box.appendChild(b);
+  });
+  return box;
+}
+function feedback(q,five){
+  var ok;
+  if(five){ ok = markFive(q,R.ans[q.id])===2; }
+  else ok = R.ans[q.id]===q.ans;
+  var f=el("div","fbk "+(ok?"ok":"no"));
+  var verdict = five ? (markFive(q,R.ans[q.id])===2?"All five correct":markFive(q,R.ans[q.id])===1?"Partially correct — 1 mark":"Not enough correct — 0 marks")
+                     : (ok?"Correct":"Not quite");
+  f.innerHTML='<div class="vd">'+verdict+'</div>'+esc(q.why);
+  return f;
+}
+
+function markFive(q,a){
+  a=a||{}; var n=0;
+  q.sts.forEach(function(st,i){ if(a[i]===st.a) n++; });
+  return n===5?2:n===4?1:0;
+}
+function maxMarks(q){ return q.kind==="five"?2:1; }
+function marksFor(q){
+  if(q.kind==="five") return markFive(q,R.ans[q.id]);
+  return R.ans[q.id]===q.ans?1:0;
+}
+function recordSeen(q){
+  var s=S.seen[q.id]||{n:0,ok:0};
+  s.n++; if(marksFor(q)===maxMarks(q)) s.ok++;
+  S.seen[q.id]=s; save();
+}
+
+function next(){ if(R.i<R.qs.length-1){R.i++;drawExam();} }
+function prev(){ if(R.i>0){R.i--;drawExam();} }
+function toggleFlag(){ var q=R.qs[R.i]; R.flags[q.id]=!R.flags[q.id]; drawExam(); }
+
+function showNav(){
+  var o=el("div","navg");
+  var b=el("div","navbox");
+  b.innerHTML='<h3>Navigator</h3><p class="tiny muted">Blue = answered. Purple border = flagged.</p>';
+  var g=el("div","qgrid");
+  R.qs.forEach(function(q,i){
+    var c=""; if(R.ans[q.id]!==undefined) c+="ans "; if(R.flags[q.id]) c+="flg "; if(i===R.i) c+="cur";
+    var bt=el("button",c,String(i+1));
+    bt.onclick=function(){ R.i=i; o.remove(); drawExam(); };
+    g.appendChild(bt);
+  });
+  b.appendChild(g);
+  var unans=R.qs.filter(function(q){return R.ans[q.id]===undefined;}).length;
+  b.appendChild(el("p","tiny muted",unans?("<b>"+unans+"</b> unanswered. There is no negative marking — answer every one before time runs out."):"All answered."));
+  var r=el("div","row");
+  var c1=el("button","btn sec sm","Close"); c1.onclick=function(){o.remove();};
+  var c2=el("button","btn sm","Finish section"); c2.onclick=function(){o.remove();finishRun(false);};
+  r.appendChild(c1); r.appendChild(c2);
+  b.appendChild(r);
+  o.appendChild(b);
+  o.onclick=function(e){ if(e.target===o) o.remove(); };
+  document.body.appendChild(o);
+}
+
+/* ---------- calculator ---------- */
+var calcOpen=false, cState={d:"0",acc:null,op:null,fresh:true,mem:0};
+function toggleCalc(){ calcOpen=!calcOpen; calcOpen?drawCalc():(function(){var c=$("#calc"); if(c)c.remove();})(); }
+function drawCalc(){
+  var old=$("#calc"); if(old) old.remove();
+  var c=el("div","calc"); c.id="calc";
+  var head=el("div","ch","Calculator");
+  var x=el("button",null,"×"); x.onclick=toggleCalc; head.appendChild(x);
+  c.appendChild(head);
+  c.appendChild(el("div","disp",esc(cState.d)));
+  var k=el("div","ck");
+  var keysA=[["MC","m"],["MR","m"],["M+","m"],["M-","m"],
+             ["C","f"],["CE","f"],["⌫","f"],["÷","op"],
+             ["7"],["8"],["9"],["×","op"],
+             ["4"],["5"],["6"],["−","op"],
+             ["1"],["2"],["3"],["+","op"],
+             ["0"],["."],["%","f"],["=","eq"]];
+  keysA.forEach(function(kk){
+    var b=el("button",kk[1]==="op"?"op":kk[1]==="eq"?"eq":"",kk[0]);
+    b.onclick=function(){ calcKey(kk[0]); };
+    k.appendChild(b);
+  });
+  c.appendChild(k);
+  document.body.appendChild(c);
+}
+function calcKey(k){
+  var n=parseFloat(cState.d)||0;
+  if(/^[0-9]$/.test(k)){ cState.d = (cState.fresh||cState.d==="0") ? k : cState.d+k; cState.fresh=false; }
+  else if(k==="."){ if(cState.fresh){cState.d="0.";cState.fresh=false;} else if(cState.d.indexOf(".")<0) cState.d+="."; }
+  else if(k==="C"){ cState={d:"0",acc:null,op:null,fresh:true,mem:cState.mem}; }
+  else if(k==="CE"){ cState.d="0"; cState.fresh=true; }
+  else if(k==="⌫"){ cState.d=cState.d.length>1?cState.d.slice(0,-1):"0"; }
+  else if(k==="MC"){ cState.mem=0; }
+  else if(k==="MR"){ cState.d=String(cState.mem); cState.fresh=true; }
+  else if(k==="M+"){ cState.mem+=n; cState.fresh=true; }
+  else if(k==="M-"){ cState.mem-=n; cState.fresh=true; }
+  else if(k==="%"){ cState.d=String(n/100); cState.fresh=true; }
+  else if(k==="+"||k==="−"||k==="×"||k==="÷"){
+    if(cState.op!==null && !cState.fresh) cState.acc=apply(cState.acc,n,cState.op);
+    else cState.acc=n;
+    cState.op=k; cState.fresh=true; cState.d=String(round12(cState.acc));
+  }
+  else if(k==="="){
+    if(cState.op!==null){ cState.d=String(round12(apply(cState.acc,n,cState.op))); cState.op=null; cState.acc=null; cState.fresh=true; }
+  }
+  drawCalc();
+}
+function apply(a,b,op){
+  a=a||0;
+  if(op==="+")return a+b; if(op==="−")return a-b;
+  if(op==="×")return a*b; if(op==="÷")return b===0?NaN:a/b;
+  return b;
+}
+function round12(x){ return isNaN(x)?"Error":parseFloat(x.toFixed(10)); }
+
+/* ---------- finish ---------- */
+function finishRun(auto){
+  if(R.timer) clearInterval(R.timer);
+  var marks=0,max=0,detail=[];
+  R.qs.forEach(function(q){
+    var m=marksFor(q), mx=maxMarks(q);
+    marks+=m; max+=mx;
+    detail.push({id:q.id,m:m,mx:mx});
+    if(R.mode!=="drill"||!R.revealed[q.id]) recordSeen(q);
+  });
+  var run={sec:R.sec,mode:R.mode,ts:Date.now(),marks:marks,max:max,
+           secs:Math.round((Date.now()-R.t0)/1000),detail:detail};
+  S.runs.push(run); save();
+  showResults(run,auto);
+}
+
+function showResults(run,auto){
+  var qs=R.qs, ans=R.ans, sec=R.sec;
+  endRunUI();
+  cur="stats";
+  nav(); countdown();
+  var v=$("#view"); v.innerHTML="";
+  window.scrollTo(0,0);
+
+  var p=run.max?run.marks/run.max:0;
+  var head=el("div","hero");
+  head.innerHTML=(auto?'<div class="pill" style="background:rgba(255,107,107,.15);color:var(--bad);border-color:var(--bad)">Time expired</div>':'')+
+    '<div class="tiny muted" style="text-transform:uppercase;letter-spacing:.08em;margin-top:'+(auto?"10px":"0")+'">'+SEC[sec]+' &middot; '+run.mode+'</div>'+
+    '<div class="scorebig">'+run.marks+' <span style="color:var(--dim);font-size:1.5rem;font-weight:600">/ '+run.max+'</span></div>'+
+    '<div class="row" style="margin-top:10px">'+
+      '<span class="pill">'+Math.round(p*100)+'% of marks</span>'+
+      (sec!=="sjt"?'<span class="pill">est. scaled '+scaled(p)+'</span>':'')+
+      '<span class="pill">'+mmss(run.secs)+' taken</span>'+
+      '<span class="pill">'+(run.secs/qs.length).toFixed(0)+'s per question</span>'+
+    '</div>';
+  v.appendChild(head);
+
+  // pacing verdict
+  var target=PERQ[sec], actual=run.secs/qs.length;
+  var pv=el("div","card");
+  var verdict = run.mode!=="timed" ? "This was an untimed drill, so the pace figure is only indicative."
+    : actual<=target ? "Inside the exam pace of "+target.toFixed(0)+"s per question. Hold that."
+    : "Above the exam pace of "+target.toFixed(0)+"s per question. In the real test that shortfall costs roughly "+
+      Math.round((actual-target)*FORMAT.sections.filter(function(x){return x.key===sec;})[0].q/60)+" minutes across the full section, which means unanswered questions at the end.";
+  pv.innerHTML='<h3>Pace</h3><p class="tiny muted">'+esc(verdict)+'</p>';
+  v.appendChild(pv);
+
+  var wrong=qs.filter(function(q){ return (q.kind==="five"?markFive(q,ans[q.id]):(ans[q.id]===q.ans?1:0)) < maxMarks(q); });
+  var rv=el("div","card");
+  rv.innerHTML='<h3>Review</h3><p class="tiny muted">'+(wrong.length? wrong.length+' question'+(wrong.length===1?'':'s')+' dropped marks. Read these before doing anything else.' : 'Everything correct. Read a couple of the explanations anyway to check the reasoning matched.')+'</p>';
+  v.appendChild(rv);
+
+  qs.forEach(function(q,i){
+    var m = q.kind==="five" ? markFive(q,ans[q.id]) : (ans[q.id]===q.ans?1:0);
+    var mx = maxMarks(q);
+    var klass = m===mx?"k-ok":m===0?"k-no":"k-part";
+    var d=el("div","rev "+klass);
+    var yours, correct;
+    if(q.kind==="five"){
+      var a=ans[q.id]||{};
+      yours=q.sts.map(function(st,j){return (a[j]===undefined?"–":(a[j]?"Yes":"No"));}).join(" / ");
+      correct=q.sts.map(function(st){return st.a?"Yes":"No";}).join(" / ");
+    } else {
+      var opts = sec==="sjt" ? SJT_SCALES[q.fmt]
+               : (sec==="vr"&&q.kind==="tfct") ? ["True","False","Can't Tell"] : q.opts;
+      yours = ans[q.id]===undefined ? "not answered" : opts[ans[q.id]];
+      correct = opts[q.ans];
+    }
+    d.innerHTML='<div class="rh"><b style="color:var(--tx)">Q'+(i+1)+'</b><span class="pill">'+m+'/'+mx+' mark'+(mx===1?'':'s')+'</span></div>'+
+      '<div style="font-size:.94rem;margin-bottom:8px">'+ (q.kind==="five"? esc(q.stem) : (sec==="qr"? q.stem : esc(q.stem))) +'</div>'+
+      '<div class="tiny" style="margin-bottom:6px"><span class="muted">Your answer:</span> '+esc(String(yours))+
+      ' &nbsp;&middot;&nbsp; <span class="muted">Correct:</span> <b>'+esc(String(correct))+'</b></div>'+
+      '<div class="tiny" style="color:var(--dim)">'+esc(q.why)+'</div>';
+    v.appendChild(d);
+  });
+
+  var r=el("div","row"); r.style.marginTop="16px";
+  var again=el("button","btn","Try this section again");
+  again.onclick=function(){ startRun(sec,run.mode); };
+  var back=el("button","btn sec","Back to progress");
+  back.onclick=function(){ go("stats"); };
+  r.appendChild(again); r.appendChild(back);
+  v.appendChild(r);
+  R=null;
+}
+
+/* ============================ maths sprint ============================ */
+function vSprint(v){
+  var c=el("div","card");
+  c.innerHTML='<h2>Mental maths sprint</h2>'+
+    '<p class="tiny muted">Sixty seconds, as many as you can. Quantitative Reasoning allows 43 seconds per question and the on-screen calculator is slow, so arithmetic you can do in your head is arithmetic you do not have to spend time on.</p>'+
+    '<p class="tiny muted">Type the answer and press Enter. Skip by pressing Enter on an empty box.</p>';
+  var b=el("button","btn","Start 60 seconds");
+  b.onclick=runSprint;
+  c.appendChild(b);
+  v.appendChild(c);
+  if(S.sprint.length){
+    var best=Math.max.apply(null,S.sprint);
+    var last=S.sprint[S.sprint.length-1];
+    v.appendChild(el("div","card",'<h3>Record</h3><p class="tiny muted">Best <b>'+best+'</b> &middot; last <b>'+last+'</b> &middot; '+S.sprint.length+' attempts</p>'));
+  }
+  var t=el("div","card");
+  t.innerHTML='<h3>What is actually being drilled</h3><ul class="clean tiny">'+
+    STRATEGY.qr.mental.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>';
+  v.appendChild(t);
+}
+function sprintQ(){
+  var t=Math.floor(Math.random()*6);
+  var a,b;
+  if(t===0){ a=[5,10,15,20,25,30,40,60,75][Math.floor(Math.random()*9)]; b=[40,60,80,120,160,240,320,450,600][Math.floor(Math.random()*9)];
+             return {q:a+"% of "+b, a:a*b/100}; }
+  if(t===1){ a=Math.floor(Math.random()*13)+3; b=Math.floor(Math.random()*13)+3; return {q:a+" × "+b, a:a*b}; }
+  if(t===2){ b=Math.floor(Math.random()*11)+3; a=b*(Math.floor(Math.random()*12)+2); return {q:a+" ÷ "+b, a:a/b}; }
+  if(t===3){ a=Math.floor(Math.random()*17)+4; return {q:a+"²", a:a*a}; }
+  if(t===4){ var f=[[1,8],[3,8],[5,8],[7,8],[1,4],[3,4],[1,5],[2,5],[3,5],[1,3],[2,3],[1,6]][Math.floor(Math.random()*12)];
+             return {q:"What is "+f[0]+"/"+f[1]+" as a percentage?", a:Math.round(f[0]/f[1]*1000)/10}; }
+  var old=[40,50,60,80,120,150,200,250][Math.floor(Math.random()*8)];
+  var chg=[10,20,25,50][Math.floor(Math.random()*4)];
+  var up=Math.random()<0.5;
+  var nw=up?old*(1+chg/100):old*(1-chg/100);
+  return {q:"A value changes from "+old+" to "+nw+". What is the percentage change? (use − for a fall)", a:up?chg:-chg};
+}
+function runSprint(){
+  var o=$("#overlay");
+  var wrap=el("div","exam");
+  var bar=el("div","ebar");
+  bar.innerHTML='<div class="sect">Mental maths sprint</div><div class="qn" id="sc">0 correct</div>';
+  var t=el("div","timer","01:00"); t.id="timer"; bar.appendChild(t);
+  wrap.appendChild(bar);
+  var body=el("div","ebody");
+  var inner=el("div","inner"); inner.style.maxWidth="520px"; inner.style.marginTop="8vh";
+  var qd=el("div"); qd.style.cssText="font-size:2rem;font-weight:730;letter-spacing:-.02em;text-align:center;margin-bottom:22px";
+  var ip=el("input");
+  ip.type="text"; ip.inputMode="decimal"; ip.autocomplete="off";
+  ip.style.cssText="width:100%;padding:16px;font-size:1.4rem;text-align:center;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--tx);font-family:inherit";
+  var fb=el("div","tiny muted"); fb.style.cssText="text-align:center;margin-top:14px;min-height:24px";
+  inner.appendChild(qd); inner.appendChild(ip); inner.appendChild(fb);
+  body.appendChild(inner); wrap.appendChild(body);
+  var foot=el("div","efoot");
+  var qb=el("button","btn sec sm","Stop"); foot.appendChild(qb);
+  wrap.appendChild(foot);
+  o.innerHTML=""; o.appendChild(wrap);
+  document.body.style.overflow="hidden";
+  ip.focus();
+
+  var left=60, score=0, q=sprintQ();
+  qd.textContent=q.q;
+  var iv=setInterval(function(){
+    left--; t.textContent=mmss(left);
+    t.className="timer"+(left<=10?" crit":left<=20?" warn":"");
+    if(left<=0) done();
+  },1000);
+  ip.onkeydown=function(e){
+    if(e.key!=="Enter") return;
+    var val=ip.value.trim().replace(/,/g,"");
+    if(val!==""){
+      var n=parseFloat(val);
+      if(!isNaN(n) && Math.abs(n-q.a)<0.051){ score++; fb.innerHTML='<span style="color:var(--ok)">Correct</span>'; }
+      else fb.innerHTML='<span style="color:var(--bad)">'+esc(q.q)+' = '+q.a+'</span>';
+    } else fb.innerHTML='<span style="color:var(--warn)">Skipped &mdash; '+esc(q.q)+' = '+q.a+'</span>';
+    $("#sc").textContent=score+" correct";
+    ip.value=""; q=sprintQ(); qd.textContent=q.q;
+  };
+  qb.onclick=done;
+  function done(){
+    clearInterval(iv);
+    S.sprint.push(score); save();
+    document.body.style.overflow=""; o.innerHTML="";
+    go("sprint");
+    toast(score+" correct in 60 seconds");
+  }
+}
+
+/* ============================ boot ============================ */
+render();
+if("serviceWorker" in navigator){
+  window.addEventListener("load",function(){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

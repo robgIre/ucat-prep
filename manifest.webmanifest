@@ -1,0 +1,14 @@
+{
+  "name": "UCAT Prep",
+  "short_name": "UCAT",
+  "description": "UCAT revision: strategy, timed drills and a four-week plan for the 2026 test format.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0e1420",
+  "theme_color": "#0e1420",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
